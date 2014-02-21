@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     @cuisines = Cuisine.all.sort.collect { |cuisine| [cuisine.name, cuisine.id] }
+    @cuisine = Cuisine.new
   end
 
   def create
