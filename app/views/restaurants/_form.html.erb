@@ -3,8 +3,14 @@
 
   <%= f.input :cuisine_id, label: "Cuisine Name", collection: @cuisines %>
 
-  <%= f.simple_fields_for :cuisine do |builder| %>
-  <%= builder.input :name, label: "Add Cuisine" %>
+  <%= f.simple_fields_for :cuisine do |cuisine| %>
+  <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
+  <% end %>
+
+  <%= f.simple_fields_for :menu do |menu| %>
+  <%= menu.input :plate, label: "plate" %>
+  <%= menu.input :price, label: "price" %>
+  <%= menu.input :side_dish, label: "Side Dish" %>
   <% end %>
 
   <%= f.button :submit %>

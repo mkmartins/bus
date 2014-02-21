@@ -5,6 +5,7 @@ source 'https://rubygems.org'
   gem 'simple_form'
   gem "paperclip", "~> 3.0"
   gem 'pg'
+  gem 'bootstrap-sass', '~> 3.1.0'
 
 group :development do
   gem 'better_errors'

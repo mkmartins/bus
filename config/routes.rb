@@ -1,4 +1,7 @@
 Bus::Application.routes.draw do
+  resources :menus
+
+
   get "static/home"
   get "static/about_us"
   get "static/how_it_works"
