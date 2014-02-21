@@ -2,7 +2,10 @@
   <%= f.input :name %>
 
   <%= f.input :cuisine_id, label: "Cuisine Name", collection: @cuisines %>
-  <%= f.input :cuisine, label: "Add Cuisine" %>
+
+  <%= f.simple_fields_for :cuisine do |builder| %>
+  <%= builder.input :name, label: "Add Cuisine" %>
+  <% end %>
 
   <%= f.button :submit %>
 <% end %>
