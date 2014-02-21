@@ -1,0 +1,28 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: postgresql
+  database: my_site_development
+  username: dpl-iota
+  password: 
+  pool: 5
+  timeout: 5000
+ 
+test:
+  adapter: postgresql
+  database: my_site_test
+  username: dpl-iota
+  password: 
+  pool: 5
+  timeout: 5000
+ 
+production:
+  adapter: postgresql
+  database: my_site_production
+  username: dpl-iota
+  password: 
+  pool: 5
+  timeout: 5000

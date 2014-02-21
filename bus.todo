@@ -1,0 +1,66 @@
+HungryStork
+
+Navigation Top:
+  - Logo/home
+  - Menu
+  - Pending Login Status
+      - Loged Out: Sign In / Sign Up
+      - Logged In: Sign Out / User name (Hyperlink to edit profile page)
+
+Navigation Bottom:
+  - About Us
+  - Contact Us
+      - Our contact information
+          - Static Contact Info
+          - Contact us Submission Form
+              - Drop Down selector "Who Are You?"
+                  - Food Provider
+                  - Hosting Business 
+                  - Individual Consumer
+                  - Other
+  - Social Sites
+      - FaceBook
+      - Twitter
+      - Reddit
+  - How it works
+      - Step by step process
+      - FAQ's
+
+Static Pages:
+    Home:
+        - How It Works
+            - Explain website steps
+        - Why It Works
+            - Explain busines model (win/win situation)
+        - Participating businesses / restuarants
+            - Current Locations Served
+        - Sign Up Form 
+
+    About Us: 
+         - Team
+         - Participating businesses
+         - Investors
+
+User Pages:
+    Menu:
+          - Cuisine / Menu
+               Cuisines:
+                  - Display Restaurant name / cuisine and subsequent menu
+                Menu:
+                  - Display Menu Item Name
+                      - Display item with side dishes
+                          - Either allow user to select side dishes or have restaurant determine legal substitutions
+                      - Display ingredients that come standard with meal
+                          - Allow ability to remove or add certain ingredients    
+                   - Display item popularity
+                   - Display item cost
+                       - Price goes up for additional ingredients
+
+User Login:
+    Business:
+                  - Need ability for user login to belong to a business
+                  - Based on business user will be displayed available cuisines
+                  - Need ability for business to select a "Pick up the tab" option
+                      - Need mechanism for allowing businesses to add / remove authorized users ordering on their bill
+
+  Admin Pages:

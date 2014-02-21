@@ -1,0 +1,7 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+
+  <%= f.input :cuisine_id, label: "Cuisine Name", collection: @cuisines %>
+
+  <%= f.button :submit %>
+<% end %>

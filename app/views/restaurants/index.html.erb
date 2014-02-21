@@ -1,0 +1,16 @@
+<% @restaurants.each do |c| %>
+  <div class='rest'>
+    <%= c.name %>
+  </div>
+<% end %>
+
+<script>
+
+$(document).ready(function() {
+  $('.rest').on('click', function() {
+    $('.rest').css('font-weight', 'normal')
+    $(this).css('font-weight', 'bold')
+  });
+});
+
+</script>
