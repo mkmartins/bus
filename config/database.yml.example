@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: bus_development
+  username: username
+  password: 
+
+test:
+  adapter: postgresql
+  database: bus_test
+  username: username
+  password: 
+
+production:
+  adapter: postgresql
+  database: bus_production
+  username: username
+  password: 
