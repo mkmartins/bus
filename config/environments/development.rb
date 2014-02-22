@@ -38,4 +38,6 @@ Bus::Application.configure do
   config.middleware.use Rack::LiveReload
 
   config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { :host => 'bus.dev' }
+  
 end

@@ -6,6 +6,7 @@ source 'https://rubygems.org'
   gem "paperclip", "~> 3.0"
   gem 'pg'
   gem 'bootstrap-sass', '~> 3.1.0'
+  gem 'devise'
 
 group :development do
   gem 'better_errors'
