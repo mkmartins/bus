@@ -7,11 +7,18 @@
   <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
   <% end %>
 
-  <%= f.simple_fields_for :menu do |menu| %>
-  <%= menu.input :plate, label: "plate" %>
-  <%= menu.input :price, label: "price" %>
-  <%= menu.input :side_dish, label: "Side Dish" %>
+  <%= f.simple_fields_for :dishes do |dish| %>
+    <%= dish.input :plate, label: "plate" %>
+    <%= dish.input :price, label: "price" %>
+    <%= dish.input :side_dish, label: "Side Dish" %>
+
+     <%= dish.simple_fields_for :ingredients do |ingredient| %>
+      <%= ingredient.input :name, label: "Add Ingredient"%>
+    <% end %>
+
   <% end %>
+
+
 
   <%= f.button :submit %>
 <% end %>

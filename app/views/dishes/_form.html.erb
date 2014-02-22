@@ -1,0 +1,14 @@
+<%= simple_form_for(@dish) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :plate %>
+    <%= f.input :price %>
+    <%= f.input :side_dish %>
+    <%= f.input :ingredient %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

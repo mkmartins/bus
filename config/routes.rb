@@ -1,5 +1,10 @@
 Bus::Application.routes.draw do
-  resources :menus
+  resources :ingredients
+
+
+  devise_for :users
+
+  resources :dishes
 
 
   get "static/home"

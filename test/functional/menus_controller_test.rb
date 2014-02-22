@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class MenusControllerTest < ActionController::TestCase
+class DishesControllerTest < ActionController::TestCase
   setup do
-    @menu = menus(:one)
+    @dish = dishes(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:menus)
+    assert_not_nil assigns(:dishes)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class MenusControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create menu" do
+  test "should create dish" do
     assert_difference('Menu.count') do
-      post :create, menu: { ingredient: @menu.ingredient, plate: @menu.plate, price: @menu.price, side_dish: @menu.side_dish }
+      post :create, dish: { ingredient: @dish.ingredient, plate: @dish.plate, price: @dish.price, side_dish: @dish.side_dish }
     end
 
-    assert_redirected_to menu_path(assigns(:menu))
+    assert_redirected_to dish_path(assigns(:dish))
   end
 
-  test "should show menu" do
-    get :show, id: @menu
+  test "should show dish" do
+    get :show, id: @dish
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @menu
+    get :edit, id: @dish
     assert_response :success
   end
 
-  test "should update menu" do
-    put :update, id: @menu, menu: { ingredient: @menu.ingredient, plate: @menu.plate, price: @menu.price, side_dish: @menu.side_dish }
-    assert_redirected_to menu_path(assigns(:menu))
+  test "should update dish" do
+    put :update, id: @dish, dish: { ingredient: @dish.ingredient, plate: @dish.plate, price: @dish.price, side_dish: @dish.side_dish }
+    assert_redirected_to dish_path(assigns(:dish))
   end
 
-  test "should destroy menu" do
+  test "should destroy dish" do
     assert_difference('Menu.count', -1) do
-      delete :destroy, id: @menu
+      delete :destroy, id: @dish
     end
 
-    assert_redirected_to menus_path
+    assert_redirected_to dishes_path
   end
 end
