@@ -18,6 +18,9 @@ group :development do
   gem "rack-livereload"
   gem 'guard-pow', require: false
   gem 'letter_opener'
+  gem "cancan"
+  gem "rolify"
+  gem "rails_layout"
 end
 
 # Gems used only for assets and not required

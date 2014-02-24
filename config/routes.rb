@@ -6,15 +6,13 @@ Bus::Application.routes.draw do
 
   resources :dishes
 
-
-  get "static/home"
   get "static/about_us"
   get "static/how_it_works"
 
   resources :cuisines
   resources :restaurants
 
-  root to: "restaurants#index"
+  root to: "static#home"
 
 
   # The priority is based upon order of creation:
