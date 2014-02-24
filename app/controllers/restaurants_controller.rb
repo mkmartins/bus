@@ -31,10 +31,10 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.save
+    if @restaurant.update_attributes(params[:restaurant])
       redirect_to restaurants_path, notice: 'saved'
     else
-      render :index
+      render :edit
     end
   end
 
