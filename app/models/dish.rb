@@ -3,6 +3,6 @@ class Dish < ActiveRecord::Base
   has_many :ingredients
 
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank
-  attr_accessible :plate, :price, :side_dish, :restaurant_id, :ingredients_attributes
+  attr_accessible :plate, :price, :restaurant_id, :ingredients_attributes
 
 end

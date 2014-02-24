@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20140222012423) do
   create_table "dishes", :force => true do |t|
     t.string   "plate"
     t.decimal  "price"
-    t.string   "side_dish"
     t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
