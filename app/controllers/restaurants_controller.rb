@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
 
   def edit
     @restaurant = Restaurant.find(params[:id])
-    # @cuisines = Cuisine.all.sort.collect { |cuisine| [cuisine.name, cuisine.id] }
+    @cuisines = Cuisine.all.sort.collect { |cuisine| [cuisine.name, cuisine.id] }
     # @cuisine = @restaurant.build_cuisine
     # @dish = @restaurant.dishes.build
     # @dish.ingredients.build

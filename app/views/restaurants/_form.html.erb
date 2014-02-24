@@ -5,20 +5,15 @@
 
   <%= f.simple_fields_for :cuisine do |cuisine| %>
   <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
-  <% end %>
-
-  <%= f.simple_fields_for :dishes do |dish| %>
-    <%= dish.input :plate, label: "plate" %>
-    <%= dish.input :price, label: "price" %>
-    <%= dish.input :side_dish, label: "Side Dish" %>
-
-     <%= dish.simple_fields_for :ingredients do |ingredient| %>
-      <%= ingredient.input :name, label: "Add Ingredient"%>
     <% end %>
 
-  <% end %>
-
-
+  <h3> Dishes </h3>
+    <%= f.simple_fields_for :dishes do |dish| %>
+     <%=  render 'dish_fields', :f => dish %>
+    <div class="link">
+    <%= link_to_add_association 'add dish', f, :dishes %>
+    </div>
+    <% end %>
 
   <%= f.button :submit %>
 <% end %>
