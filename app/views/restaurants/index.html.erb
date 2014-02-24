@@ -1,17 +1,8 @@
 <% @restaurants.each do |c| %>
   <div class='rest'>
     <%= c.name %>
-    <%#= link_to 'edit', edit_restaurant_path%>
+    <%= link_to "Edit", edit_restaurant_path(c) %>
+    <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+
   </div>
 <% end %>
-
-<script>
-
-$(document).ready(function() {
-  $('.rest').on('click', function() {
-    $('.rest').css('font-weight', 'normal')
-    $(this).css('font-weight', 'bold')
-  });
-});
-
-</script>
