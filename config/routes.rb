@@ -1,4 +1,7 @@
 Bus::Application.routes.draw do
+  resources :side_dishes
+
+
   resources :ingredients
 
 

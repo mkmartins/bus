@@ -3,6 +3,7 @@ class CreateIngredients < ActiveRecord::Migration
     create_table :ingredients do |t|
       t.string :name
       t.integer :dish_id
+      t.integer :side_dish_id
 
       t.timestamps
     end

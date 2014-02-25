@@ -10,6 +10,8 @@ class RestaurantsController < ApplicationController
     @cuisine = @restaurant.build_cuisine
     @dish = @restaurant.dishes.build
     @dish.ingredients.build
+    @side_dish = @dish.side_dishes.build
+    @side_dish.side_ingredients.build
   end
 
   def create

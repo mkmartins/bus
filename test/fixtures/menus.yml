@@ -3,11 +3,9 @@
 one:
   plate: MyString
   price: 9.99
-  side_dish: MyString
   ingredient: MyString
 
 two:
   plate: MyString
   price: 9.99
-  side_dish: MyString
   ingredient: MyString
