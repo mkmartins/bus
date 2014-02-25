@@ -1,4 +1,7 @@
 Bus::Application.routes.draw do
+  match 'auth/:provider/callback', to: 'sessions#create'
+
+
   resources :ingredients
 
 
@@ -8,6 +11,7 @@ Bus::Application.routes.draw do
 
   get "static/about_us"
   get "static/how_it_works"
+  get "static/contact_us"
 
   resources :cuisines
   resources :restaurants
