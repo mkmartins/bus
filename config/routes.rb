@@ -11,6 +11,7 @@ Bus::Application.routes.draw do
 
   get "static/about_us"
   get "static/how_it_works"
+  get "static/menu"
 
   resources :cuisines
   resources :restaurants

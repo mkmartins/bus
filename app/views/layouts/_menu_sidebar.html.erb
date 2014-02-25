@@ -1,0 +1,29 @@
+<div class="contant">
+  <ul class="nav " id="myTab">
+      <li><a href="/">Storkly<i class="glyphicon glyphicon-heart-empty"></i></a></li>
+      <li class ='active'><a href="#monday" data-toggle="tab">MONDAY</a></li>
+      <li><a href="#tuesday" data-toggle="tab">TUESDAY</a></li>
+      <li><a href="#wed" data-toggle="tab">WED</a></li>
+      <li><a href="#thursday" data-toggle="tab">THURSDAY</a></li>
+      <li><a href="#friday" data-toggle="tab">FRIDAY</a></li>
+      <li><a href="#saturday" data-toggle="tab">SATURDAY</a></li>
+      <li><a href="http://www.espn.com"><h4>Catering</h4></a></li>
+  </ul>
+</div>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="monday">Emanuel's Mexican Food.</div>
+  <div class="tab-pane" id="tuesday">Little Ceaser's Pizza.</div>
+  <div class="tab-pane" id="wed">Marcos Food.</div>
+  <div class="tab-pane" id="thursday">Mike's Food.</div>
+  <div class="tab-pane" id="friday">Awesome food.</div>
+  <div class="tab-pane" id="saturday">Braza Express.</div>
+</div>
+
+
+<%# #this code will go into the js file %>
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
