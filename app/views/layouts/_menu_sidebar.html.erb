@@ -1,23 +1,25 @@
 <div class="contant">
-  <ul class="nav " id="myTab">
-      <li><a href="/">Storkly<i class="glyphicon glyphicon-heart-empty"></i></a></li>
-      <li class ='active'><a href="#monday" data-toggle="tab">MONDAY</a></li>
-      <li><a href="#tuesday" data-toggle="tab">TUESDAY</a></li>
-      <li><a href="#wed" data-toggle="tab">WED</a></li>
-      <li><a href="#thursday" data-toggle="tab">THURSDAY</a></li>
-      <li><a href="#friday" data-toggle="tab">FRIDAY</a></li>
-      <li><a href="#saturday" data-toggle="tab">SATURDAY</a></li>
-      <li><a href="http://www.espn.com"><h4>Catering</h4></a></li>
-  </ul>
+  <div class="col-md-6" id="leftCol">
+    <ul class="nav " id="myTab">
+        <li><a href="/">Storkly<i class="glyphicon glyphicon-heart-empty"></i></a></li>
+        <li class ='active'><a href="#monday" data-toggle="tab">MONDAY</a></li>
+        <li><a href="#tuesday" data-toggle="tab">TUESDAY</a></li>
+        <li><a href="#wed" data-toggle="tab">WED</a></li>
+        <li><a href="#thursday" data-toggle="tab">THURSDAY</a></li>
+        <li><a href="#friday" data-toggle="tab">FRIDAY</a></li>
+        <li><a href="#saturday" data-toggle="tab">SATURDAY</a></li>
+        <li><a href="http://www.espn.com"><h4>Catering</h4></a></li>
+    </ul>
+  </div>
 </div>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="monday">Emanuel's Mexican Food.</div>
-  <div class="tab-pane" id="tuesday">Little Ceaser's Pizza.</div>
-  <div class="tab-pane" id="wed">Marcos Food.</div>
-  <div class="tab-pane" id="thursday">Mike's Food.</div>
-  <div class="tab-pane" id="friday">Awesome food.</div>
-  <div class="tab-pane" id="saturday">Braza Express.</div>
+  <div class="tab-pane fade in active" id="monday"><%= link_to "Hungry Howie", restaurants_path %></div>
+  <div class="tab-pane fade" id="tuesday">Little Ceaser's Pizza.</div>
+  <div class="tab-pane fade" id="wed">Marcos Food.</div>
+  <div class="tab-pane fade" id="thursday">Mike's Food.</div>
+  <div class="tab-pane fade" id="friday">Awesome food.</div>
+  <div class="tab-pane fade" id="saturday">Braza Express.</div>
 </div>
 
 
