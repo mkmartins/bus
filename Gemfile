@@ -8,9 +8,7 @@ source 'https://rubygems.org'
   gem 'bootstrap-sass', '~> 3.1.0'
   gem 'devise'
   gem "cocoon"
-  #gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
-  #gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
-  #gem 'omni-auth facebook'
+  gem 'omniauth-facebook'
 
 group :development do
   gem 'better_errors'
@@ -25,6 +23,7 @@ group :development do
   gem "cancan"
   gem "rolify"
   gem "rails_layout"
+  gem 'powder'
 end
 
 # Gems used only for assets and not required
