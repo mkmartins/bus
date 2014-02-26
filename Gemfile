@@ -8,6 +8,7 @@ source 'https://rubygems.org'
   gem 'bootstrap-sass', '~> 3.1.0'
   gem 'devise'
   gem "cocoon"
+  gem "font-awesome-rails"
 
 group :development do
   gem 'better_errors'

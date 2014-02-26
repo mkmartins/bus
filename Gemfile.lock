@@ -76,6 +76,8 @@ GEM
     eventmachine (1.0.3)
     execjs (2.0.2)
     ffi (1.9.3)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     guard (2.4.0)
       formatador (>= 0.2.4)
@@ -207,6 +209,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 3.2.1)
   devise
+  font-awesome-rails
   guard
   guard-livereload
   guard-pow
