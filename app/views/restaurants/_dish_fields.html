@@ -1,17 +1,24 @@
-<div class="nested-fields">
-  <%=f.input :plate %>
-  <%=f.input :price %>
-  <%=f.input :side_dish %>
+<div class="nested-fields well">
+  <%#= link_to_add_association 'add dish', dish, :dishes %>
+  <%= link_to_remove_association "remove dish", f %>
+  <%= f.input :plate %>
+  <%= f.input :price %>
 
   <%= f.simple_fields_for :ingredients do |ingredient| %>
-     <%=  render 'ingredient_fields', :f => ingredient %>
-     <% end %>
+     <%=  render 'ingredient_fields', f: ingredient %>
+  <% end %>
   <div class="link">
     <%= link_to_add_association 'add ingredient', f, :ingredients %>
   </div>
 
-  <%=link_to_remove_association "remove dish", f %>
-  <%#= link_to_add_association 'add ingredient', f, :name %>
+  <%= f.simple_fields_for :side_dishes do |side| %>
+     <%=  render 'side_dish_fields', f: side %>
+  <% end %>
+
+
+  <div class="link">
+    <%= link_to_add_association 'add side', f, :side_dishes %>
+  </div>
 
 
 </div>

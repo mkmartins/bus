@@ -10,6 +10,8 @@ class RestaurantsController < ApplicationController
     @cuisine = @restaurant.build_cuisine
     @dish = @restaurant.dishes.build
     @dish.ingredients.build
+    @side_dish = @dish.side_dishes.build
+    @side_dish.side_ingredients.build
   end
 
   def create
@@ -31,10 +33,10 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.save
+    if @restaurant.update_attributes(params[:restaurant])
       redirect_to restaurants_path, notice: 'saved'
     else
-      render :index
+      render :edit
     end
   end
 

@@ -1,0 +1,7 @@
+class SideDish < ActiveRecord::Base
+  belongs_to :dish
+  has_many :side_ingredients, class_name: Ingredient
+  attr_accessible :name, :side_ingredients_attributes
+
+  accepts_nested_attributes_for :side_ingredients, reject_if: :all_blank
+end

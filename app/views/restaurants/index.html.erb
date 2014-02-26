@@ -1,12 +1,15 @@
-<% @restaurants.each do |c| %>
-  <div class='rest'>
-    <%= c.name %>
-    <%= link_to "Edit", edit_restaurant_path(c) %>
-    <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+  
+<div class="content-fluid">
+  <% @restaurants.each do |c| %>
+    <div class='rest'>
+      <%= c.name %>
+      <%= link_to "Edit", edit_restaurant_path(c) %>
+      <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
 
+    </div>
+  <% end %>
+  <br/>
+  <div class="btn">
+    <button type="button" class="btn btn-default"><%= link_to "Create New", new_restaurant_path %></button>
   </div>
-<% end %>
-<br/>
-<div class="btn">
-  <button type="button" class="btn btn-default"><%= link_to "Create New", new_restaurant_path %></button>
 </div>

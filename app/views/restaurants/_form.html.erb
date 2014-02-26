@@ -4,16 +4,18 @@
   <%= f.input :cuisine_id, label: "Cuisine Name", collection: @cuisines %>
 
   <%= f.simple_fields_for :cuisine do |cuisine| %>
-  <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
-    <% end %>
+    <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
+  <% end %>
 
   <h3> Dishes </h3>
-    <%= f.simple_fields_for :dishes do |dish| %>
-     <%=  render 'dish_fields', :f => dish %>
-    <div class="link">
+  
+  <%= f.simple_fields_for :dishes do |dish| %>
+    <%=  render 'dish_fields', f: dish %>
+  <% end %>
+
+  <div class='links'>
     <%= link_to_add_association 'add dish', f, :dishes %>
-    </div>
-    <% end %>
+  </div>
 
   <%= f.button :submit %>
 <% end %>

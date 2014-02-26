@@ -1,8 +1,10 @@
 Bus::Application.routes.draw do
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
+  resources :side_dishes
 
   resources :ingredients
 
@@ -14,6 +16,7 @@ Bus::Application.routes.draw do
   get "static/about_us"
   get "static/how_it_works"
   get "static/contact_us"
+  get "static/menu"
 
   resources :cuisines
   resources :restaurants

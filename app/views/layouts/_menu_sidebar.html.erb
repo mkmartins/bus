@@ -1,0 +1,88 @@
+<div class="contant">
+  <div class="col-md-6" id="leftCol">
+    <ul class="nav " id="myTab">
+        <li><a href="/">Storkly<i class="glyphicon glyphicon-heart-empty"></i></a></li>
+        <li class ='active'><a href="#monday" data-toggle="tab">MONDAY</a></li>
+        <li><a href="#tuesday" data-toggle="tab">TUESDAY</a></li>
+        <li><a href="#wed" data-toggle="tab">WED</a></li>
+        <li><a href="#thursday" data-toggle="tab">THURSDAY</a></li>
+        <li><a href="#friday" data-toggle="tab">FRIDAY</a></li>
+        <li><a href="#saturday" data-toggle="tab">SATURDAY</a></li>
+        <li><a href="http://www.espn.com"><h4>Catering</h4></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="monday">
+    <%= link_to "Hungry Howie", restaurants_path %>
+    <div class="menu restaurant 1">
+      <div class="individual dish">
+
+      <!-- render accompanying form under appropriate name of restaurant with the proper associated fields of dish, side dish, and ingredients with the corresponding dish weekday_id 
+      Make sure it's in form format, not list format, so people can select and proceed to checkout
+      -->
+
+      <%# if dish.weekday_id = "monday", display name of restaurant in the header
+
+      List each restaurant name just once
+
+      Create a column to display individual dishes for that particular restaurant under the corresponding restaurant header
+
+      HTML/CSS: Space restaurant columns appropriately based on number of restaurants with dish weekday_ids of monday; count restaurant names only once
+
+      OR
+
+      just create a scroll-down list sorted by restaurant, then corresponding dishes, side dishes, ingredients, etc. in form fields
+
+      problem with that is one restaurant will be listed first and that will influence the volume of orders compared with other restaurants who are ordering that day
+
+      OR
+
+      display names of restaurant alphabetically just once who have dishes with the weekday_id of monday in a list, link them to that restaurant's monday menu 
+
+      easier coding, but harder on admins and salespeople who will use system: instead of using weekday_id's just have individual versions of the main ordering form of the delivering restaurant's menu for that weekday %>
+      <% Dishes.where("weekday_id = 'monday'").each do |p| %>
+      <%= p.dish %> 
+      <% end %>
+     </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="tuesday">
+    <% Dishes.where("weekday_id = 'tuesday'").each do |p|
+    <%= p.dish %>
+    <% end %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="wed">
+    <% Dishes.where("weekday_id = 'wednesday'").each do |p| %>
+    <%= p.dish %> 
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="thursday">
+    <% Dishes.where("weekday_id = 'thursday'").each do |p| %>
+    <%= p.dish %> 
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="friday">
+    <% Dishes.where("weekday_id = 'friday'").each do |p| %>
+    <%= p.dish %> 
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="saturday">
+    <% Dishes.where("weekday_id = 'saturday'").each do |p| %>
+    <%= p.dish %> 
+    <!-- render accompanying form under appropriate name of restaurant with the proper associated fields of dish, side dish, and ingredients with the corresponding dish weekday_id 
+    Make sure it's in form format, not list format, so people can select and proceed to checkout
+    -->
+    <% end %>
+  </div>
+</div>
+
+
+<%# #this code will go into the js file %>
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>

@@ -7,4 +7,8 @@ class StaticController < ApplicationController
 
   def how_it_works
   end
+  
+  def menu
+  end
+
 end
