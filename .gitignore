@@ -19,3 +19,5 @@ database.yml
 /tmp
 
 .powenv
+
+.DS-Store
