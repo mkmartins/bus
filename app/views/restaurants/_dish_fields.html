@@ -12,7 +12,7 @@
       <% end %>
 
     <div class="link">
-      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+      <p class="btn btn-success"><%= link_to_add_association 'Add Ingredient', f, :ingredients %></p>
     </div>
   </div>
 
@@ -22,8 +22,7 @@
 
 
   <div class="link">
-    <%= link_to_add_association 'add side', f, :side_dishes %>
+    <p class="btn btn-success"><%= link_to_add_association 'Add Side Dish', f, :side_dishes %></p> | <p class="btn btn-danger"><%= link_to_remove_association "Remove Dish", f %></p>
   </div>
 
-  <%= link_to_remove_association "remove dish", f %>
 </div>
