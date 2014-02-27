@@ -1,6 +1,11 @@
 <div class="nested-fields well well-sm">
   <div class="row">
-    <div class="col-xs-3"><%=f.input :name, label: "Side Ingredient Name" %></div>
-    <div class="col-xs-4"><%=link_to_remove_association "remove side ingredient", f %></div>
+    <div class="col-xs-3"><%=f.input :name, label: "Ingredient Name" %></div>
+    <div class="col-xs-4"><%=link_to_remove_association "remove ingredient", f %></div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-3"><%=f.input :standard, label: "Standard Dish Item?" %></div>
+  </div>     
+
 </div>
