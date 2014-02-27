@@ -42,46 +42,46 @@
       display names of restaurant alphabetically just once who have dishes with the weekday_id of monday in a list, link them to that restaurant's monday menu 
 
       easier coding, but harder on admins and salespeople who will use system: instead of using weekday_id's just have individual versions of the main ordering form of the delivering restaurant's menu for that weekday %>
-      <% Dishes.where("weekday_id = 'monday'").each do |p| %>
-      <%= p.dish %> 
-      <% end %>
+      <%# Dishes.where("weekday_id = 'monday'").each do |p| %>
+      <%#= p.dish %> 
+      <%# end %>
      </div>
     </div>
   </div>
   <div class="tab-pane fade" id="tuesday">
-    <% Dishes.where("weekday_id = 'tuesday'").each do |p|
-    <%= p.dish %>
-    <% end %>
+    <%# Dishes.where("weekday_id = 'tuesday'").each do |p|
+    <%#= p.dish %>
+    <%# end %>
     </div>
   </div>
   <div class="tab-pane fade" id="wed">
-    <% Dishes.where("weekday_id = 'wednesday'").each do |p| %>
-    <%= p.dish %> 
-    <% end %>
+    <%# Dishes.where("weekday_id = 'wednesday'").each do |p| %>
+    <%#= p.dish %> 
+    <%# end %>
   </div>
   <div class="tab-pane fade" id="thursday">
-    <% Dishes.where("weekday_id = 'thursday'").each do |p| %>
-    <%= p.dish %> 
-    <% end %>
+    <%# Dishes.where("weekday_id = 'thursday'").each do |p| %>
+    <%#= p.dish %> 
+    <%# end %>
   </div>
   <div class="tab-pane fade" id="friday">
-    <% Dishes.where("weekday_id = 'friday'").each do |p| %>
-    <%= p.dish %> 
-    <% end %>
+    <%# Dishes.where("weekday_id = 'friday'").each do |p| %>
+    <%#= p.dish %> 
+    <%# end %>
   </div>
   <div class="tab-pane fade" id="saturday">
-    <% Dishes.where("weekday_id = 'saturday'").each do |p| %>
-    <%= p.dish %> 
+    <%# Dishes.where("weekday_id = 'saturday'").each do |p| %>
+    <%#= p.dish %> 
     <!-- render accompanying form under appropriate name of restaurant with the proper associated fields of dish, side dish, and ingredients with the corresponding dish weekday_id 
     Make sure it's in form format, not list format, so people can select and proceed to checkout
     -->
-    <% end %>
+    <%# end %>
   </div>
 </div>
 
 
 <%# #this code will go into the js file %>
-<script>
+<<script>
   $(function () {
     $('#myTab a:last').tab('show')
   })
