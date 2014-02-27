@@ -1,21 +1,30 @@
-<%= simple_form_for @restaurant do |f| %>
-  <%= f.input :name %>
+<div class="nested-fields well well-md">
+  <%= simple_form_for @restaurant do |f| %>
 
-  <%= f.input :cuisine_id, label: "Cuisine Name", collection: @cuisines %>
+    <div class ="row">
+      <div class="col-xs-4"><%= f.input :name, label: "Restaurant Name" %></div>
+    </div>
 
-  <%= f.simple_fields_for :cuisine do |cuisine| %>
-    <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %>
+    <div class ="row">
+      <div class ="col-xs-4"><%= f.input :cuisine_id, label: "Cuisine Type", collection: @cuisines %></div>
+    </div>
+
+    <div class ="row">
+      <div class="col-xs-4"><%= f.simple_fields_for :cuisine do |cuisine| %>
+        <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %></div>
+      <% end %>
+    </div>
+
+    <h3> Dishes </h3>
+    
+    <%= f.simple_fields_for :dishes do |dish| %>
+      <%=  render 'dish_fields', f: dish %>
+    <% end %>
+
+    <div class='links'>
+      <p class="btn btn-success"><%= link_to_add_association 'add dish', f, :dishes %></p>
+    </div>
+
+    <%= f.button :submit, as: :select %>
   <% end %>
-
-  <h3> Dishes </h3>
-  
-  <%= f.simple_fields_for :dishes do |dish| %>
-    <%=  render 'dish_fields', f: dish %>
-  <% end %>
-
-  <div class='links'>
-    <%= link_to_add_association 'add dish', f, :dishes %>
-  </div>
-
-  <%= f.button :submit %>
-<% end %>
+</div>
