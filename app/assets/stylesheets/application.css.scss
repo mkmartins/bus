@@ -11,10 +11,16 @@ $navbar-bottom-bg: $black;
 .navbar-bottom {
   background-color: $navbar-bottom-bg;
   color: white;
-  .nav a{
+  font-size: 16px;
+  .nav a {
     padding: 0;
+    color: $black;
+  }
+  h3 {
+    font-size: 24px;
   }
 }
+
 
 
 //Customer font-size

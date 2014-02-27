@@ -12,8 +12,8 @@
       <ul class="nav nav-stacked">
         <br/>
         <br/>
-        <li><%= link_to 'How It Works', static_how_it_works_path%>
-        </li>
+        <li><h3><%= link_to 'How It Works', static_how_it_works_path%>
+        </h3></li>
         <br/>
           <li>&nbsp;&nbsp;&nbsp;<%= link_to 'The Process', static_how_it_works_path + "#process" %>
           </li>
@@ -26,7 +26,7 @@
       <ul class="nav nav-stacked">
         <br/>
         <br/>
-        <li><%= link_to "About Us", static_about_us_path %></li>
+        <li><h3><%= link_to "About Us", static_about_us_path %></h3></li>
         <br/>
           <li>&nbsp;&nbsp;&nbsp;<%= link_to 'Team', static_about_us_path + "#team" %></li>
           <li>&nbsp;&nbsp;&nbsp;<%= link_to 'Participating Businesses', static_about_us_path + "#participating" %></li>
@@ -40,7 +40,7 @@
       <ul class="nav nav-stacked">
         <br/>
         <br/>
-        <li><%= link_to "Connect with Us", static_contact_us_path %></li>
+        <li><h3><%= link_to "Connect with Us", static_contact_us_path %></h3></li>
         <br/>
           <li>&nbsp;&nbsp;&nbsp;<%= link_to "Email", static_contact_us_path + "#email" %></li>
           <li>&nbsp;&nbsp;&nbsp;<%= link_to "Facebook", static_contact_us_path + "#facebook" %></li>
@@ -52,7 +52,7 @@
     </div><!-- /.navbar-collapse -->
     <br/>
       <center>
-        <p><a href="http://www.bootply.com">mjm productions </a> &nbsp; | &nbsp; ©Copyright <%= Time.now.year %> Storkly.</p>
+        <p class="copyright"><a href="http://www.bootply.com">mjm productions </a> &nbsp; | &nbsp; ©Copyright <%= Time.now.year %> Storkly.</p>
       </center>
   </div><!-- /.container-fluid -->
 </nav>
