@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-bottom" role="navigation">
+<nav class="navbar navbar-bottom navbar-static-bottom" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="col-sm-1">
@@ -12,10 +12,12 @@
       <ul class="nav nav-stacked">
         <br/>
         <br/>
-        <li><%= link_to "How It Works", static_how_it_works_path %></li>
+        <li><%= link_to 'How It Works', static_how_it_works_path%>
+        </li>
         <br/>
-          <li>&nbsp;&nbsp;&nbsp;The Process</li>
-          <li>&nbsp;&nbsp;&nbsp;FAQ's</li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to 'The Process', static_how_it_works_path + "#process" %>
+          </li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to "FAQ's", static_how_it_works_path + "#faq" %></li>
         </ul>
       </ul>
     </div>
@@ -26,9 +28,9 @@
         <br/>
         <li><%= link_to "About Us", static_about_us_path %></li>
         <br/>
-          <li>&nbsp;&nbsp;&nbsp;Team</li>
-          <li>&nbsp;&nbsp;&nbsp;Participating Businesses</li>
-          <li>&nbsp;&nbsp;&nbsp;Investors</li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to 'Team', static_about_us_path + "#team" %></li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to 'Participating Businesses', static_about_us_path + "#participating" %></li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to 'Investors', static_about_us_path + "#investors" %></li>
         </ul>
       </ul>
     </div>
@@ -38,11 +40,11 @@
       <ul class="nav nav-stacked">
         <br/>
         <br/>
-        <li><%= link_to"Connect with us", static_contact_us_path %></li>
+        <li><%= link_to "Connect with Us", static_contact_us_path %></li>
         <br/>
-          <li>&nbsp;&nbsp;&nbsp;Email</li>
-          <li>&nbsp;&nbsp;&nbsp;Facebook</li>
-          <li>&nbsp;&nbsp;&nbsp;Twitter</li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Email", static_contact_us_path + "#email" %></li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Facebook", static_contact_us_path + "#facebook" %></li>
+          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Twitter", static_contact_us_path + "#twitter"%></li>
         </ul>
       </ul>
     </div>

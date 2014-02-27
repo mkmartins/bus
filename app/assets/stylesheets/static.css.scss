@@ -6,9 +6,22 @@
   background: image-url("green.jpg");
 }
 
+
 #footer {
-   position:absolute;
+   background-color: $black;
+   color: $black;
+   line-height: 1.0;
+   position: absolute;
    width:100%;
    height:60px;   /* Height of the footer */
+   a{
+      &:hover { 
+      text-decoration: underline;
+      color: inherit;
+      }
+        &:visited {
+          color: inherit;
+        }
+    }
+  }
 
-}

@@ -5,6 +5,17 @@ $light-blue: #92AFC1;
 $tan: #F1BD9B;
 $red: #BC4C2E;
 $dark-red: #8C3F2C;
+$black: #121f1f;
+$navbar-bottom-bg: $black;
+
+.navbar-bottom {
+  background-color: $navbar-bottom-bg;
+  color: white;
+  .nav a{
+    padding: 0;
+  }
+}
+
 
 //Customer font-size
 
