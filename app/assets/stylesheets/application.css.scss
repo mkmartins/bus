@@ -1,5 +1,6 @@
 //Global Sass Variables
 
+
 $dark-blue: #496D8B;
 $light-blue: #92AFC1;
 $tan: #F1BD9B;
@@ -7,6 +8,15 @@ $red: #BC4C2E;
 $dark-red: #8C3F2C;
 $black: #121f1f;
 $navbar-bottom-bg: $black;
+
+//Customer font-size
+
+//Import Frameworks
+
+@import "framework_and_overrides";
+@import "menus";
+@import "static";
+@import "font-awesome";
 
 .navbar-bottom {
   background-color: $navbar-bottom-bg;
@@ -22,12 +32,3 @@ $navbar-bottom-bg: $black;
 }
 
 
-
-//Customer font-size
-
-//Import Frameworks
-
-@import "framework_and_overrides";
-@import "menus";
-@import "static";
-@import "font-awesome";
