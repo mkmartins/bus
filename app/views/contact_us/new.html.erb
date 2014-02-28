@@ -2,7 +2,7 @@
   <h1> Contact us </h1>
 </div>
 
-<%= simple_form_for @contact_email, url: create_contact_me_path  do |f| %>
+<%= simple_form_for @contact_us, url: contact_us_path  do |f| %>
   <%= f.error_notification %>
   <%= f.input :name%>
   <%= f.input :email %>

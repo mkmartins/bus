@@ -1,4 +1,4 @@
-class ContactEmail
+class ContactUs
   
   include ActiveModel::Validations
   include ActiveModel::Conversion

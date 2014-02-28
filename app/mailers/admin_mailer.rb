@@ -1,6 +1,6 @@
 class AdminMailer < ActionMailer::Base
   
-  default :to => Admin.all.map(&:email),
+  default :to => "jillairei@gmail.com" #Admin.all.map(&:email),
           :from => "notification@storkly.com"
  
   def new_registration(user)

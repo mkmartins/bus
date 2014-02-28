@@ -1,12 +1,10 @@
 class ContactMailer < ActionMailer::Base
-  default :to => Admin.all.map(&:email),
-          :from => "contact@storkly.com"
 
   layout "email_template"
 
-  def contact(message)
-    @message = message
-    mail to: "contact@storkly.com", subject: " #{@message.name} | #{@message.topic}", from: @message.email
+  def contact(contact_us)
+    @contact_us = contact_us
+    mail to: "jillairei@gmail.com", subject: "#{@contact_us.name} | #{@contact_us.subject}", from: @contact_us.email
   end
 
 end
