@@ -2,12 +2,15 @@
   <h1> Contact us </h1>
 </div>
 
-<%= simple_form_for @contact_us, url: contact_us_path  do |f| %>
+<%= simple_form_for @contact_us, url: contact_us_path do |f| %>
+
   <%= f.error_notification %>
-  <%= f.input :name%>
+  <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :subject %>
+
   <%= f.input :body, as: :text, input_html: { rows: 5 } %>
+
   <div class='text-center'>
     <%= f.submit "Send us a message", class: "btn btn-primary" %>
   </div>
