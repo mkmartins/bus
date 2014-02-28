@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140226144251) do
+ActiveRecord::Schema.define(:version => 20140228164455) do
+
+  create_table "admin_emails", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "login"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "cuisines", :force => true do |t|
     t.string   "name"
@@ -22,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20140226144251) do
   create_table "dishes", :force => true do |t|
     t.string   "plate"
     t.decimal  "price"
-    t.string   "side_dish"
     t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -31,11 +38,10 @@ ActiveRecord::Schema.define(:version => 20140226144251) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
-    t.boolean  "standard"
-    t.decimal  "price"
     t.integer  "dish_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "side_dish_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "restaurants", :force => true do |t|
@@ -48,6 +54,14 @@ ActiveRecord::Schema.define(:version => 20140226144251) do
   create_table "side_dishes", :force => true do |t|
     t.string   "name"
     t.integer  "dish_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_emails", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "login"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

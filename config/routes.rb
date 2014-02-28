@@ -1,5 +1,17 @@
 Bus::Application.routes.draw do
 
+  resources :contact_emails
+
+
+  resources :admin_emails
+
+
+  resources :user_emails
+
+  get '/contact-emails', to: "contact_emails#new", as: :contact_me
+  post '/contact-emails', to: "contact_emails#create", as: :create_contact_me
+
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
