@@ -22,9 +22,9 @@
     <% end %>
 
     <div class='links'>
-      <p class="btn btn-success"><%= link_to_add_association 'add dish', f, :dishes %></p>
+      <%= link_to_add_association 'Add Dish', f, :dishes, class: "btn btn-success" %>
     </div>
-
-    <%= f.button :submit, as: :select %>
+<br/>
+    <%= f.submit 'Create Restaurant', class: 'btn btn-primary' %>
   <% end %>
 </div>

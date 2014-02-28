@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20140224224223) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
+    t.boolean  "standard"
+    t.decimal  "price"
     t.integer  "dish_id"
     t.integer  "side_dish_id"
     t.datetime "created_at",   :null => false
