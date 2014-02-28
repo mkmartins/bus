@@ -6,14 +6,15 @@ Bus::Application.routes.draw do
 
   devise_for :users
 
-  resources :dishes
 
   get "static/about_us"
   get "static/how_it_works"
   get "static/menu"
 
   resources :cuisines
-  resources :restaurants
+  resources :restaurants do
+    resources :dishes
+  end
 
   root to: "static#home"
 
