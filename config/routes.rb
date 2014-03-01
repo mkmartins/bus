@@ -4,8 +4,8 @@ Bus::Application.routes.draw do
 
   resources :user_emails
 
-  get '/contact-us', to: "contact_us#new", as: :contact_us
-  post '/contact-us', to: "contact_us#create", as: :contact_us
+  get '/contact_us', to: "contact_us#new", as: :contact_us
+  post '/contact_us', to: "contact_us#create", as: :contact_us
 
 
   match 'auth/:provider/callback', to: 'sessions#create'
@@ -27,6 +27,9 @@ Bus::Application.routes.draw do
   get "static/menu"
   get "static/team"
   get "static/process"
+  get "static/faq"
+  get "static/participating_businesses"
+  get "static/investors"
 
   resources :cuisines
   resources :restaurants
