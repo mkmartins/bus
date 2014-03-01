@@ -1,8 +1,9 @@
-class DishsController < ApplicationController
+class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @dishes = Dish.all
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @dishes = @restaurant.dishes
 
     respond_to do |format|
       format.html # index.html.erb

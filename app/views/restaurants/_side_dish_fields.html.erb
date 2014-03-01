@@ -1,8 +1,10 @@
 <div class="nested-fields well well-lg">
   <div class="row">
     <div class="col-xs-3"><%=f.input :name, label: "Side Dish Name" %></div>
+
     <div class="col-xs-4"><%=link_to_remove_association "Remove Side Dish", f, class: "btn btn-danger btn-xs" %></div>
   </div>
+  <br/>
     <%= f.simple_fields_for :side_ingredients do |side_ingredient| %>
     <br/>
       <%=  render 'side_ingredient_fields', f: side_ingredient %>

@@ -19,7 +19,6 @@ Bus::Application.routes.draw do
 
   devise_for :users
 
-  resources :dishes
 
   get "static/about_us"
   get "static/how_it_works"
@@ -32,7 +31,9 @@ Bus::Application.routes.draw do
   get "static/investors"
 
   resources :cuisines
-  resources :restaurants
+  resources :restaurants do
+    resources :dishes
+  end
 
   root to: "static#home"
 

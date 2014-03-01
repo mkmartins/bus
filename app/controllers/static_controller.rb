@@ -9,6 +9,8 @@ class StaticController < ApplicationController
   end
   
   def menu
+    @restaurants = Restaurant.all
+      @restaurant = @restaurants.find(params[:id])
   end
 
 end
