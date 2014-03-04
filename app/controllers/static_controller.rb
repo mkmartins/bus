@@ -9,7 +9,10 @@ class StaticController < ApplicationController
   end
   
   def menu
-    @restaurants= Restaurant.all
+    @restaurants = Restaurant.all
+    @dishes = Dish.all
+    @dish = @dishes.find(params[:dishes_id])
+    @order = Order.new
   end
 
 end

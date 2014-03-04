@@ -1,5 +1,8 @@
 Bus::Application.routes.draw do
 
+  resources :orders
+
+
   resources :admin_emails
 
   resources :user_emails

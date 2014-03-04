@@ -3,14 +3,14 @@ source 'https://rubygems.org'
   gem 'rails', '3.2.16'
   gem 'sqlite3'
   gem 'simple_form'
-  gem "paperclip", "~> 3.0"
+  gem 'paperclip', '~> 3.0'
   gem 'pg'
   gem 'bootstrap-sass', '~> 3.1.0'
   gem 'devise'
-  gem "cocoon"
+  gem 'cocoon'
   gem 'omniauth-facebook'
-  gem "font-awesome-rails"
-
+  gem 'font-awesome-rails'
+  gem 'jquery-rails'
 
 group :development do
   gem 'better_errors'
@@ -19,13 +19,14 @@ group :development do
   gem 'meta_request'
   gem 'guard'
   gem 'guard-livereload', require: false
-  gem "rack-livereload"
+  gem 'rack-livereload'
   gem 'guard-pow', require: false
   gem 'letter_opener'
-  gem "cancan"
-  gem "rolify"
-  gem "rails_layout"
+  gem 'cancan'
+  gem 'rolify'
+  gem 'rails_layout'
   gem 'powder'
+  gem 'ffaker'
 end
 
 # Gems used only for assets and not required
@@ -39,8 +40,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

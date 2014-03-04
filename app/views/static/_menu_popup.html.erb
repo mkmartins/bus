@@ -5,19 +5,20 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><%= dish.plate %></h4>
       </div>
-      <%#= dish.each do |dish| %>
+
       <div class="modal-body">
+        <%= simple_form_for @order do |f| %>
           <% dish.ingredients.each do |ingredients| %>
-            <%= ingredients.name %>
+            <div class="order-name"><%= f.input :order_ingredient, label: ingredients.name %> <%= ingredients.price %></div>
             <%= ingredients.price %>
             <%= ingredients.standard %>
           <% end %>
-        <%# end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Order</button>
+        <%= f.submit "Order", class: 'btn btn-default'%>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
