@@ -1,15 +1,16 @@
-<center><h1>Here's Your Choices</h1></center>
-
+<center><h1>What are you hungry for?</h1></center>
+</br>
 <% @restaurants.each do |f| %>
-
-<center><h1><%= f.name %></h1></center>
-
+</br>
+<%= render partial: 'menu_carousel', locals: {f: f} %>
+</br>
 <% f.dishes.each_slice(3) do |slice| %>
   <div class="row">
     <% slice.each do |dish| %>
       <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-          <img src="http://placehold.it/320x150" alt="">
+<%# picture size for this section should be 320/150 %>
+          <img src="http://lorempixel.com/320/150/abstract/9/" alt="">
           <div class="caption">
             <h4 class="pull-right"><%= dish.price %></h4>
             <h4><a href data-toggle="modal" data-target="#<%= dish.id %>"><%= dish.plate %></a></h4>
