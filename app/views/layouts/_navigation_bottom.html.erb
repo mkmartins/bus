@@ -4,7 +4,7 @@
     <div class="col-sm-1">
       <br/>
 
-      <a class="navbar-brand" href="/">Storkly</a>
+      <a class="navbar-brand" href="/">LunchLord</i></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,9 +42,10 @@
         <br/>
         <li><h3><%= link_to "Connect with Us", static_contact_us_path %></h3></li>
         <br/>
-          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Email", contact_us_path %></li>
-          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Facebook", static_contact_us_path + "#facebook" %></li>
-          <li>&nbsp;&nbsp;&nbsp;<%= link_to "Twitter", static_contact_us_path + "#twitter"%></li>
+        <br/>
+          <li><strong class="fa fa-envelope">&nbsp;&nbsp;&nbsp;<%= link_to "Email", contact_us_path + "#email"%></strong></li><br/>
+          <li><i class="fa fa-facebook-square">&nbsp;&nbsp;&nbsp;<%= link_to "Facebook", static_contact_us_path + "#facebook" %></i></li><br/>
+          <li><i class="fa fa-twitter-square">&nbsp;&nbsp;&nbsp;<%= link_to "Twitter", static_contact_us_path + "#twitter"%></i></li>
         </ul>
       </ul>
     </div>

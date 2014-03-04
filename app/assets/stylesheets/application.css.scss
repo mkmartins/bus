@@ -26,6 +26,12 @@ $navbar-bottom-bg: $black;
     padding: 0;
     color: white;
   }
+
+.navbar-brand {
+  -webkit-writing-mode: vertical-lr;
+  font-size: 50px;
+}
+
   h3 {
     font-size: 24px;
   }
