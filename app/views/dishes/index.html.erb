@@ -1,13 +1,12 @@
-<h1>Listing dishes</h1>
+<center><h1>Here's Your Choices</h1></center>
 
-<%= @restaurants.each do |f| %>
+<% @restaurants.each do |f| %>
 
 <center><h1><%= f.name %></h1></center>
 
 <% f.dishes.each_slice(3) do |slice| %>
   <div class="row">
     <% slice.each do |dish| %>
-   <%#= raise 'asdf' %>
       <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
           <img src="http://placehold.it/320x150" alt="">
@@ -28,7 +27,9 @@
         </div>
       </div>
       <%= render partial: 'popup', locals: {dish: dish} %>
+      
     <% end %>
+
   </div>           
 <% end %>
 <% end %>
