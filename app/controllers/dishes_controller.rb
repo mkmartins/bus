@@ -2,6 +2,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
+    @restaurants= Restaurant.all
     @restaurant = Restaurant.find(params[:restaurant_id])
     @dishes = @restaurant.dishes
 
