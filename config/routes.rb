@@ -1,10 +1,14 @@
 Bus::Application.routes.draw do
 
+  resources :orders
+
+
   resources :admin_emails
 
   resources :user_emails
 
   get '/contact_us', to: "contact_us#new", as: :contact_us
+  get '/about_us', to: "about_us#new", as: :about_us
   post '/contact_us', to: "contact_us#create", as: :contact_us
 
 
@@ -20,15 +24,18 @@ Bus::Application.routes.draw do
   devise_for :users
 
 
-  get "static/about_us"
-  get "static/how_it_works"
-  get "static/contact_us"
+
+  get "navbar_bottom/about_us"
+  get "navbar_bottom/contact_us"
+  get "navbar_bottom/faq"
+  get "navbar_bottom/investors"
+  get "navbar_bottom/participating_businesses"
+  get "navbar_bottom/how_it_works"
+  get "navbar_bottom/process"
+  get "navbar_bottom/team"
+
   get "static/menu"
-  get "static/team"
-  get "static/process"
-  get "static/faq"
-  get "static/participating_businesses"
-  get "static/investors"
+
 
   resources :cuisines
   resources :restaurants do

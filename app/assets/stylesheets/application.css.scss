@@ -8,6 +8,7 @@ $red: #BC4C2E;
 $dark-red: #8C3F2C;
 $black: #121f1f;
 $navbar-bottom-bg: $black;
+$navbar-default-link-color: white;
 
 //Customer font-size
 
@@ -18,6 +19,10 @@ $navbar-bottom-bg: $black;
 @import "static";
 @import "font-awesome";
 
+
+.navbar-default {
+  background-color: #D92323;
+}
 .navbar-bottom {
   background-color: $navbar-bottom-bg;
   color: white;
@@ -36,5 +41,3 @@ $navbar-bottom-bg: $black;
     font-size: 24px;
   }
 }
-
-

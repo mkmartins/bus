@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140228170614) do
+=======
+ActiveRecord::Schema.define(:version => 20140304204126) do
+>>>>>>> ab44ea82d219bc4a3f75e96d3963ef2f75710d59
 
   create_table "admin_emails", :force => true do |t|
     t.string   "name"
@@ -47,10 +51,19 @@ ActiveRecord::Schema.define(:version => 20140228170614) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
+    t.boolean  "standard"
+    t.decimal  "price"
     t.integer  "dish_id"
     t.integer  "side_dish_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.boolean  "order_ingredient"
+    t.boolean  "order_side"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "restaurants", :force => true do |t|
@@ -63,6 +76,8 @@ ActiveRecord::Schema.define(:version => 20140228170614) do
   create_table "side_dishes", :force => true do |t|
     t.string   "name"
     t.integer  "dish_id"
+    t.boolean  "standard"
+    t.decimal  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
