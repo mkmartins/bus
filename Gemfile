@@ -26,7 +26,7 @@ group :development do
   gem 'rolify'
   gem 'rails_layout'
   gem 'powder'
-  gem 'ffaker'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
