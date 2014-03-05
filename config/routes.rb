@@ -35,6 +35,7 @@ Bus::Application.routes.draw do
   get "navbar_bottom/team"
 
   get "static/menu"
+  
 
 
   resources :cuisines
