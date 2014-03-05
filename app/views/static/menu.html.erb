@@ -1,36 +1,39 @@
+
 <center><h1>What are you hungry for?</h1></center>
 </br>
 <% @restaurants.each do |f| %>
-</br>
-<%= render partial: 'menu_carousel', locals: {f: f} %>
-</br>
-<% f.dishes.each_slice(3) do |slice| %>
-  <div class="row">
-    <% slice.each do |dish| %>
-      <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-<%# picture size for this section should be 320/150 %>
-          <img src="http://lorempixel.com/320/150/abstract/9/" alt="">
-          <div class="caption">
-            <h4 class="pull-right"><%= dish.price %></h4>
-            <h4><a href data-toggle="modal" data-target="#<%= dish.id %>"><%= dish.plate %></a></h4>
-          </div>
-          <div class="ratings">
-              <p class="pull-right">15 reviews</p>
-              <p>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-              </p>
-          </div>
-        </div>
-      </div>
-      <%= render partial: 'menu_popup', locals: {dish: dish} %>
-      
-    <% end %>
+  <div class="flag">
+    </br>
+    <%= render partial: 'menu_carousel', locals: {f: f} %>
+    </br>
+      <% f.dishes.each_slice(3) do |slice| %>
+        <div class="row">
+          <% slice.each do |dish| %>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="thumbnail">
+      <%# picture size for this section should be 320/150 %>
+                <img src="http://cookinglightsimmerandboil.files.wordpress.com/2013/02/jasonsdeli_nutty_mixedup_salad.jpg?w=300&h=150" alt="">
+                <div class="caption">
+                  <h4 class="pull-right"><%= dish.price %></h4>
+                  <h4><a href data-toggle="modal" data-target="#<%= dish.id %>"><%= dish.plate %></a></h4>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+              </div>
+            </div>
+            <%= render partial: 'menu_popup', locals: {dish: dish} %>
+            
+          <% end %>
 
-  </div>           
-<% end %>
+      </div>           
+      <% end %>
+  </div>
 <% end %>

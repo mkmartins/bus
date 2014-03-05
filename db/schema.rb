@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20140304204126) do
 
   create_table "orders", :force => true do |t|
     t.boolean  "order_ingredient"
+    t.boolean  "order_side"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -71,6 +72,8 @@ ActiveRecord::Schema.define(:version => 20140304204126) do
   create_table "side_dishes", :force => true do |t|
     t.string   "name"
     t.integer  "dish_id"
+    t.boolean  "standard"
+    t.decimal  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

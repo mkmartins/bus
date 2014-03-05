@@ -8,11 +8,21 @@
 
       <div class="modal-body">
         <%= simple_form_for @order do |f| %>
-          <% dish.ingredients.each do |ingredients| %>
-            <div class="order-name"><%= f.input :order_ingredient, label: ingredients.name %> <%= ingredients.price %></div>
-            <%= ingredients.price %>
-            <%= ingredients.standard %>
-          <% end %>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Main Dish Ingredients</h3>
+              <% dish.ingredients.each do |ingredients| %>
+                <div class="order-name"><%= f.input :order_ingredient, label: ingredients.name %> <%= ingredients.price %></div>
+                <%= ingredients.price %>
+              <% end %>
+            </div>
+            <div class="col-sm-4">
+              <h3>Side Dishes</h3>
+              <% dish.side_dishes.each do |side_dishes| %>
+                <div ><%= f.input :order_side, label: side_dishes.name %></div>
+              <% end %>
+            </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

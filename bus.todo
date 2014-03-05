@@ -66,3 +66,12 @@ User Login:
 
 
 Step 1: Define a route that lists all dishes belonging to a restaurant
+
+
+<script type="text/javascript">
+$(".side_dish_input").click(function(){
+  var checkbox = $(this);
+  console.debug(checkbox.next(".ingredient_div").first);  
+  checkbox.next(".ingredient_div").show();
+});
+</script>
