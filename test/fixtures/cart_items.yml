@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
-  status: MyString
+  quantity: 1
+  cart: 
+  order_dish: 
 
 two:
-  user: 
-  status: MyString
+  quantity: 1
+  cart: 
+  order_dish: 

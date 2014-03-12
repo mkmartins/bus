@@ -1,4 +1,7 @@
 class Dish < ActiveRecord::Base
+
+  scope :standard, -> {where "user_id IS NULL" }
+
   belongs_to :restaurant
   has_many :ingredients
   has_many :side_dishes
