@@ -18,7 +18,7 @@
         <li><%= link_to "Add Restaurant", new_restaurant_path %></li>
         <li><%= link_to "All Restaurants", restaurants_path %></li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
         <li><%= link_to edit_user_registration_path(current_user) do %>

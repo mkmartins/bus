@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 637d5899f614a6f4d0fa2147f9b3b8b1c8b39b28
+  specs:
+    stripe (1.10.2)
+      json (~> 1.8.1)
+      mime-types (~> 1.25)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,6 +88,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffaker (1.23.0)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
@@ -193,6 +205,8 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rolify (3.4.0)
     sass (3.3.2)
     sass-rails (3.2.6)
@@ -236,6 +250,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   ffaker
+  figaro
   font-awesome-rails
   guard
   guard-livereload
@@ -255,4 +270,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
+  stripe!
   uglifier (>= 1.0.3)

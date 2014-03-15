@@ -11,6 +11,9 @@ source 'https://rubygems.org'
   gem 'omniauth-facebook'
   gem 'font-awesome-rails'
   gem 'jquery-rails'
+  gem 'figaro'
+  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 
 group :development do
   gem 'better_errors'

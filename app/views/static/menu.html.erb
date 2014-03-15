@@ -9,6 +9,7 @@
       <% f.dishes.each_slice(3) do |slice| %>
         <div class="row">
           <% slice.each do |dish| %>
+
             <div class="col-sm-4 col-lg-4 col-md-4">
               <div class="thumbnail">
       <%# picture size for this section should be 320/150 %>
@@ -16,6 +17,7 @@
                 <div class="caption">
                   <h4 class="pull-right"><%= dish.price %></h4>
                   <h4><a href data-toggle="modal" data-target="#<%= dish.id %>"><%= dish.plate %></a></h4>
+                  <%= link_to "Buy", restaurant_dish_path(f, dish) %>
                 </div>
                 <div class="ratings">
                     <p class="pull-right">15 reviews</p>
@@ -30,10 +32,10 @@
               </div>
             </div>
             <%= render partial: 'menu_popup', locals: {dish: dish} %>
-            
+
           <% end %>
 
-      </div>           
+      </div>
       <% end %>
   </div>
 <% end %>

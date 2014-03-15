@@ -1,0 +1,20 @@
+
+<p>Dish ID: <%= @dish.id %></p>
+<p>Dish Name: <%=  @dish.plate %></p>
+<p><%= number_to_currency @dish.price %> </p>
+<p><%=  @dish.restaurant.name %></p>
+
+<%= form_tag checkout_create_customer_path do |f| %>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= ENV['STRIPE_PUBLIC_KEY'] %>"
+    data-amount="<%= @dish.price_in_cents %>"
+    data-name="Lunch Lord"
+    data-description="<%= @dish.plate %> from <%= @dish.restaurant.name %>"
+    data-image="http://cookinglightsimmerandboil.files.wordpress.com/2013/02/jasonsdeli_nutty_mixedup_salad.jpg?w=300&h=150"
+    data-email="<%= current_user.email %>"
+    data-billing-address=true
+    data-shipping-address=true
+    >
+  </script>
+<% end %>

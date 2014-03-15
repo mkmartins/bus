@@ -1,5 +1,11 @@
 Bus::Application.routes.draw do
 
+  get '/checkout', to: "checkout#payment", as: :checkout
+  post '/checkout/create_customer', to: "checkout#create_customer", as: :checkout_create_customer
+  get '/checkout/review-order', to: "checkout#review_order", as: :checkout_review_order
+  post '/checkout/submit', to: "checkout#submit_order", as: :checkout_submit_order
+  get '/checkout/order-confirmation', to: "checkout#order_confirmation", as: :checkout_order_confirmation
+
   resources :admin_emails
 
   resources :user_emails
@@ -32,7 +38,7 @@ Bus::Application.routes.draw do
   get "navbar_bottom/team"
 
   get "static/menu"
-  
+
 
 
   resources :cuisines
