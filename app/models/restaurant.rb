@@ -12,6 +12,7 @@ class Restaurant < ActiveRecord::Base
   amoeba do
     enable
     include_field :dishes
+    include_field :ingredients
   end    
 
   #   Restaurant.dup :include => :name

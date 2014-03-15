@@ -16,4 +16,8 @@ class Dish < ActiveRecord::Base
   #   # order.save
   # end
 
+  amoeba do
+    enable
+  end
+
 end

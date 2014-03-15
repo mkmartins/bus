@@ -16,7 +16,10 @@ Restaurant.all.each do |p|
     10.times do
     dish.ingredients.create(name: Faker::Name.last_name)
     1.times do
-    dish.side_dishes.create(name:Faker::Name.first_name)
+    side_dish = dish.side_dishes.create(name:Faker::Name.first_name)
+    5.times do
+    side_dish.side_ingredients.create(name:Faker::Name.last_name)
+  end
   end
   end
   end
