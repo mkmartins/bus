@@ -12,4 +12,16 @@ class ApplicationController < ActionController::Base
     @order = Order.first
   end
 
+  def check_current_order
+    @order = session[:current_order_id].nil? ? Order.new : Order.find_by_id(session[:current_order_id])
+  end
+
+  def save_order_session
+    session[:current_order_id] = @order.id
+  end
+
+  def delete_current_order_session
+    session[:current_order_id] = nil
+    check_current_order
+  end
 end

@@ -1,12 +1,14 @@
-
 <center><h1>What are you hungry for?</h1></center>
 </br>
-<% @restaurants.each do |f| %>
+<div id="order_status_div">
+  <%= render :partial => "orders/order_status" %>
+</div>
+<% @restaurants.each do |restaurant| %>
   <div class="flag">
     </br>
-    <%= render partial: 'menu_carousel', locals: {f: f} %>
+    <%= render partial: 'menu_carousel', locals: {restaurant: restaurant} %>
     </br>
-      <% f.dishes.each_slice(3) do |slice| %>
+      <% restaurant.dishes.each_slice(3) do |slice| %>
         <div class="row">
           <% slice.each do |dish| %>
             <div class="col-sm-4 col-lg-4 col-md-4">
@@ -29,6 +31,7 @@
                 </div>
               </div>
             </div>
+            <div 
             <%= render partial: 'menu_popup', locals: {dish: dish} %>
             
           <% end %>

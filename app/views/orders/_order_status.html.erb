@@ -1,0 +1,9 @@
+<% if @order.new_record? %>
+  This is an unsaved order
+<% else %>
+  Order Dishes Count: <%= @order.order_dishes.count %><br/>
+  <% @order.order_dishes.each do |order_dish|%>
+    Dishes to Order: <%= order_dish.dish.plate %><br/>
+  <% end %>
+  <%= link_to "Restart Order", order_path(@order), :method => :delete, :remote => true %>
+<% end %>

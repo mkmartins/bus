@@ -44,6 +44,8 @@ Bus::Application.routes.draw do
     resources :order_dishes
   end
 
+  resources :orders
+
 
   root to: "static#home"
 

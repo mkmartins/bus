@@ -5,29 +5,32 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><%= dish.plate %></h4>
       </div>
-
-      <div class="modal-body">
+      <%= simple_form_for [dish, dish.order_dishes.new] do |f| %>
+        <%= f.hidden_field "dish_id", value: dish.id %>
+        <div class="modal-body">
+          
+            <div class="row">
+              <div class="col-sm-4">
+                <h3>Main Dish Ingredients</h3>
+                  
+                    <% dish.ingredients.each do |ingredient| %>
+                      <div class="order-name"><%= ingredient.name %></div>
+                      <%= ingredient.price %>
+                    <% end %>
+                  
+              </div>
+              <div class="col-sm-4">
+                <h3>Side Dishes</h3>
+              </div>
         
-          <div class="row">
-            <div class="col-sm-4">
-              <h3>Main Dish Ingredients</h3>
-                
-                  <% dish.ingredients.each do |ingredients| %>
-                <div class="order-name"></div>
-                <%= ingredients.price %>
-                  <% end %>
-                
             </div>
-            <div class="col-sm-4">
-              <h3>Side Dishes</h3>
-            </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= link_to 'order', new_dish_order_dish_path(dish) %>
-        
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%#= link_to 'order', new_dish_order_dish_path(dish) %>
+          <%= f.submit 'Order' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

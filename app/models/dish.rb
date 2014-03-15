@@ -5,6 +5,7 @@ class Dish < ActiveRecord::Base
   belongs_to :restaurant
   has_many :ingredients
   has_many :side_dishes
+  has_many :order_dishes
 
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank
   accepts_nested_attributes_for :side_dishes, reject_if: :all_blank
