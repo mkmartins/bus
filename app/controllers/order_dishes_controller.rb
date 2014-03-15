@@ -13,6 +13,7 @@ class OrderDishesController < ApplicationController
       @order.restaurant_id = @dish.restaurant_id
       @order.save
       save_order_session
+      # @order.dish_id = @dish.id
     end
     @order_dish = @order.order_dishes.create(dish_id: @dish.id)
     redirect_to static_menu_path()

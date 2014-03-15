@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :check_current_order 
 
   private
 
@@ -13,7 +14,9 @@ class ApplicationController < ActionController::Base
   end
 
   def check_current_order
-    @order = session[:current_order_id].nil? ? Order.new : Order.find_by_id(session[:current_order_id])
+    # @order = session[:current_order_id].nil? ? Order.new : Order.find_by_current_order_id(session[:current_order_id])
+    # raise " "
+    @order = session[:current_order_id].nil? ? Order.new : Order.new
   end
 
   def save_order_session

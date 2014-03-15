@@ -19,6 +19,7 @@ class StaticController < ApplicationController
     # @order is set by check_current_order
     @dish = @dishes.find(params[:dishes_id])
     @order_dish = @dish.dup
+    
   end
 
 end
