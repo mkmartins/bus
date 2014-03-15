@@ -9,5 +9,12 @@ class Restaurant < ActiveRecord::Base
 
   attr_accessible :cuisine_id, :name, :cuisine,  :cuisine_attributes, :dishes_attributes
 
+  amoeba do
+    enable
+    include_field :dishes
+  end    
+
+  #   Restaurant.dup :include => :name
+  # end
 
 end

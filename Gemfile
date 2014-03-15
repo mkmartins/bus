@@ -11,6 +11,8 @@ source 'https://rubygems.org'
   gem 'omniauth-facebook'
   gem 'font-awesome-rails'
   gem 'jquery-rails'
+  gem 'deep_cloneable', '~> 1.6.0'
+  gem 'amoeba'
 
 group :development do
   gem 'better_errors'
