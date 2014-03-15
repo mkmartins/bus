@@ -1,7 +1,9 @@
-class OrderDish < Dish
-  belongs_to :user
-  has_many :cart_items
-  default_scope -> {where "user_id IS NOT NULL" }
+class OrderDish < ActiveRecord::Base
+  attr_accessible :dish_id
+
+  belongs_to :order
+  belongs_to :dish
+  has_many :order_dish_ingredients
 
   # def duplicate
   #   @dishes = Dish.all

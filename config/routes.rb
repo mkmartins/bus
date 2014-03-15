@@ -39,6 +39,11 @@ Bus::Application.routes.draw do
   resources :restaurants do
     resources :dishes
   end
+  
+  resources :dishes do
+    resources :order_dishes
+  end
+
 
   root to: "static#home"
 
