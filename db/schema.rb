@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140315203657) do
+ActiveRecord::Schema.define(:version => 20140317101929) do
 
   create_table "admin_emails", :force => true do |t|
     t.string   "name"
@@ -59,11 +59,15 @@ ActiveRecord::Schema.define(:version => 20140315203657) do
     t.string   "plate"
     t.decimal  "price"
     t.integer  "restaurant_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "weekday_id"
     t.integer  "user_id"
     t.integer  "order_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "ingredients", :force => true do |t|

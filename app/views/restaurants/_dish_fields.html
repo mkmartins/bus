@@ -6,6 +6,12 @@
         <div class="row">
           <div class="col-xs-2"><%= f.input :price %></div>
         </div>
+
+      <div class='row'>
+      <h4> Picture</h4>
+        <%= f.input :image %> 
+      </div>  
+
       <br/>
       <%= f.simple_fields_for :ingredients do |ingredient| %>
          <%=  render 'ingredient_fields', f: ingredient %>

@@ -7,7 +7,7 @@ class Restaurant < ActiveRecord::Base
   accepts_nested_attributes_for :cuisine, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :dishes, reject_if: :all_blank, allow_destroy: true
 
-  attr_accessible :cuisine_id, :name, :cuisine,  :cuisine_attributes, :dishes_attributes
+  attr_accessible :cuisine_id, :name, :cuisine,  :cuisine_attributes, :dishes_attributes, :image
 
   amoeba do
     enable

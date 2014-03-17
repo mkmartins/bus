@@ -20,6 +20,7 @@ class StaticController < ApplicationController
     @dish = @dishes.find(params[:dishes_id])
     @order_dish = @dish.dup
     
+    
   end
 
 end
