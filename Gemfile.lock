@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/blowmage/minitest-rails.git
+  revision: f1fbffe9649f6fe41b50153d30cf012e5bcf6d2e
+  specs:
+    minitest-rails (1.0.0.beta3.20140227161412)
+      minitest (~> 4.7)
+      minitest-test (~> 1.0)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,6 +88,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffaker (1.23.0)
@@ -128,6 +142,9 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25.1)
+    minitest (4.7.5)
+    minitest-test (1.1.0)
+      minitest (~> 4.0)
     multi_json (1.9.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -241,6 +258,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   deep_cloneable (~> 1.6.0)
   devise
+  factory_girl_rails
   ffaker
   font-awesome-rails
   guard
@@ -249,6 +267,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   meta_request
+  minitest-rails!
   omniauth-facebook
   paperclip (~> 3.0)
   pg

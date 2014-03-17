@@ -28,7 +28,13 @@ group :development do
   gem 'rolify'
   gem 'rails_layout'
   gem 'powder'
-  gem 'ffaker'
+end
+
+group :development, :test do 
+  gem "minitest-rails", github: "blowmage/minitest-rails"
+  gem 'factory_girl_rails'
+  gem "ffaker"
+
 end
 
 # Gems used only for assets and not required
@@ -42,6 +48,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
