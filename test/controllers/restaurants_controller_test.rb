@@ -12,94 +12,69 @@ class RestaurantsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:restaurant)
   end
 
-  test "should create post" do
-  assert_difference('Post.count') do
-    post :create, post: {title: 'Some title'}
-  end
- 
-  assert_redirected_to post_path(assigns(:post))
-end
+ def test_it_shows_a_restaurant
+    get :show, id: @restaurant
+    refute_nil assigns(:restaurant)
+    refute_nil assigns(:cuisine)
+    refute_nil assigns(:dish)
+    refute_nil assigns(:side_dish)
+    refute_nil assigns(:ingredient)
+ end
+  
 
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:posts)
-  end
-end
-
-
-
-
-def test_it_display_index_with_posts
-    get :index
-    assert_response :success
-    assert_template :index
-    assert_not_nil assigns(:posts)
-  end
-
-  def test_it_shows_a_post
-    get :show, id: @post
-    assert_response :success
-    assert_template :show
-    refute_nil assigns(:post)
-    refute_nil assigns(:comment)
-  end
-
-  def test_it_shows_a_new_post_page
+  def test_it_shows_a_new_individual_restaurant
     get :new
     assert_response :success
     assert_template :new
-    refute_nil assigns(:post)
+    refute_nil assigns(:restaurant)
   end
 
-  def test_edit_post_page
-    get :edit, id: @post
+  def test_edit_restaurant_page
+    get :edit, id: @restaurant
     assert_response :success
-    assert_template :edit
-    refute_nil assigns(:post)
+    refute_nil assigns(:restaurant)
   end
 
-  def test_successful_post_creation
-    assert_difference('Post.count', 1) do
-      post :create, post: attributes_for(:post)
+  def test_successful_restaurant_creation
+    assert_difference('Restaurant.count', 1) do
+      restaurant:create, restaurant: attributes_for(:restaurant)
     end
     assert_response :redirect
-    refute_nil assigns(:post)
-    assert_redirected_to post_path(assigns(:post))
+    refute_nil assigns(:restaurant)
+    assert_redirected_to restaurant_path(assigns(:restaurant))
     assert_not_nil flash[:notice]
     # Over testing, but possible. May be useful if logic is in message?
     # assert_equal flash[:notice], 'Post was successfully created.'
   end
 
-  def test_post_creation_is_unsuccessful_and_re_renders_form
-    post :create, post: attributes_for(:post, title: nil)
+  def test_restaurant_creation_is_unsuccessful_and_re_renders_form
+    post :create, restaurant: attributes_for(:restaurant, title: nil)
     assert_response :success
     assert_template :new
-    refute_nil assigns(:post)
+    refute_nil assigns(:restaurant)
   end
 
-  def test_successful_post_update
-    put :update,  id: @post.id, post: attributes_for(:post, title: "Updated Title")
+  def test_successful_restaurant_update
+    put :update,  id: @restaurant.id, restaurant: attributes_for(:restaurant, title: "Updated Title")
     assert_response :redirect
-    refute_nil assigns(:post)
-    assert_redirected_to post_path(assigns(:post))
+    refute_nil assigns(:restaurant)
+    assert_redirected_to restaurant_path(assigns(:restaurant))
     assert_not_nil flash[:notice]
   end
 
   def test_post_update_is_unsuccessful
-    put :update, id: @post.id, post: attributes_for(:post, title: nil)
+    put :update, id: @restaurant.id, restaurant: attributes_for(:restaurant, title: nil)
     assert_response :success
     assert_template :edit
-    refute_nil assigns(:post)
+    refute_nil assigns(:restaurant)
   end
 
-  def test_post_gets_destroyed
-    assert_difference('Post.count', -1) do
-      delete :destroy, id: @post.id
+  def test_restaurant_gets_destroyed
+    assert_difference('Restaurant.count', -1) do
+      delete :destroy, id: @restaurant.id
     end
     assert_response :redirect
-    assert_redirected_to posts_path
+    assert_redirected_to restaurants_path
   end
 
 end

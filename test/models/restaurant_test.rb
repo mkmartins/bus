@@ -6,7 +6,6 @@ class RestaurantTest < ActiveSupport::TestCase
     #@restaurant ||= Restaurant.new
   #end
 
-
   def setup
     @post = build(:post)
     # @saved_post = create(:post)
