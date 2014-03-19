@@ -1,4 +1,8 @@
 class Restaurant < ActiveRecord::Base
+
+  include PublicActivity::Model
+  tracked
+
   belongs_to :cuisine
   has_many :dishes
   has_many :ingredients, through: :dishes

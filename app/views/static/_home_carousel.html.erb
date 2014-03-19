@@ -10,16 +10,16 @@
         <div class="active item">
             <img src="/assets/abstract.jpeg" alt="Slide 1">
             <div class="carousel-caption">
-              <% if current_user %>
-                <h1><%= current_user.company.name %></h1>
+              <%# if current_user %>
+                <h1><%#= current_user.company.name %></h1>
                 <br/>
-                <h1><%= current_user.company.message %></h1>
-              <% else %>
+                <h1><%#= current_user.company.message %></h1>
+              <%# else %>
                 <h1>What Are You Having For Lunch Today ?</h1>
                 <br/>
                 <h3>Don't budge for fast-food. Eat local and eat fresh.</h3>
                 <br/>
-              <% end  %>
+              <%# end  %>
               <br/>
       <a href="#" class="btn btn-default btn-lg">See what's for lunch today!</a>
             </div>

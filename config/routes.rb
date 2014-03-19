@@ -1,7 +1,9 @@
 Bus::Application.routes.draw do
 
+
   resources :companies
 
+  resources :activities
 
   resources :admin_emails
 

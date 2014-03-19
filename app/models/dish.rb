@@ -1,4 +1,7 @@
 class Dish < ActiveRecord::Base
+  
+  include PublicActivity::Model
+  tracked
 
   scope :standard, -> {where "user_id IS NULL" }
 
