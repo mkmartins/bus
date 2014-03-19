@@ -1,5 +1,8 @@
 Bus::Application.routes.draw do
 
+  resources :companies
+
+
   resources :admin_emails
 
   resources :user_emails
@@ -19,6 +22,9 @@ Bus::Application.routes.draw do
 
 
   devise_for :users
+
+  resources :users, only: [:index, :new]
+
 
 
 

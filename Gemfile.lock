@@ -143,6 +143,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.2.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2
     omniauth-oauth2 (1.1.2)
       faraday (>= 0.8, < 0.10)
       multi_json (~> 1.3)
@@ -250,6 +253,7 @@ DEPENDENCIES
   letter_opener
   meta_request
   omniauth-facebook
+  omniauth-google-oauth2
   paperclip (~> 3.0)
   pg
   powder

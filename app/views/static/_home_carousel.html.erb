@@ -11,9 +11,9 @@
             <img src="/assets/abstract.jpeg" alt="Slide 1">
             <div class="carousel-caption">
               <% if user_signed_in? %>
-                <h1>Your company loves you!</h1>
+                <h1><%= Company.name %></h1>
                 <br/>
-                <h3>They want you to save time and money. Have local restaurants deliver fresh food to your desk for discounted prices.</h3>
+                <h3><%= Company.message %></h3>
               <% else %>
                 <h1>What Are You Having For Lunch Today ?</h1>
                 <br/>

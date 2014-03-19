@@ -13,6 +13,7 @@ source 'https://rubygems.org'
   gem 'jquery-rails'
   gem 'deep_cloneable', '~> 1.6.0'
   gem 'amoeba'
+  gem "omniauth-google-oauth2"
 
 group :development do
   gem 'better_errors'

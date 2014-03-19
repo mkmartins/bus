@@ -10,7 +10,11 @@
       <div class ="col-xs-4"><%= f.input :cuisine_id, label: "Cuisine Type", collection: @cuisines %></div>
     </div>
 
-
+   <div class ="row">
+      <div class="col-xs-4"><%= f.simple_fields_for :cuisine do |cuisine| %>
+        <%= cuisine.input :name, label: "Add Cuisine", placeholder: "Leave blank if dropdown selected" %></div>
+      <% end %>
+    </div>
 
     <h3> Dishes </h3>
     
