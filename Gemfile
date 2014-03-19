@@ -16,6 +16,7 @@ source 'https://rubygems.org'
   gem 'amoeba'
   gem "omniauth-google-oauth2"
   gem 'figaro'
+  gem "aws-sdk"
 
 group :development do
   gem 'better_errors'
