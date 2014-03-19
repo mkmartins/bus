@@ -10,10 +10,10 @@
         <div class="active item">
             <img src="/assets/abstract.jpeg" alt="Slide 1">
             <div class="carousel-caption">
-              <% if user_signed_in? %>
-                <h1><%= Company.first.name %></h1>
+              <% if current_user %>
+                <h1><%= current_user.company.name %></h1>
                 <br/>
-                <h3><%= Company.first.message %></h3>
+                <h1><%= current_user.company.message %></h1>
               <% else %>
                 <h1>What Are You Having For Lunch Today ?</h1>
                 <br/>
