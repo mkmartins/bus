@@ -21,9 +21,11 @@ Bus::Application.routes.draw do
   resources :ingredients
 
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users, only: [:index, :new]
+
+  get "/select-company", to: "static#company_select", as: :company_select
 
 
 

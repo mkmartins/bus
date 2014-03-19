@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id, :first_name, :last_name
 
   def default_cart
     self.cart ||= Cart.create
@@ -25,16 +24,21 @@ class User < ActiveRecord::Base
     self.salesman?
   end
 
-  def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.oauth_token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
-    end
-  end
+
+  def self.find_for_facebook_oauth(auth)
+
+     facebook_attributes = { provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0,20], first_name: auth.info.first_name, last_name: auth.info.last_name }
+ 
+     if user = User.where(provider: auth.provider, uid: auth.id).first
+       user.update_attributes(facebook_attributes)
+       user
+     elsif user = User.find_by_email(auth.info.email)
+       user.update_attributes(facebook_attributes)
+       user
+     else
+       user = User.create(facebook_attributes)
+     end
+   end
 
 end
 
