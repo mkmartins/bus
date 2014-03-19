@@ -60,8 +60,13 @@ ActiveRecord::Schema.define(:version => 20140319214536) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "message"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "adress_line_1"
+    t.string   "adress_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "contact_emails", :force => true do |t|

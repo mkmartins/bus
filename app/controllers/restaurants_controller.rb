@@ -1,6 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_filter :authorize_admin, only: [:create, :new, :edit, :update, :destroy, :index]
-
+  
   def index
     @restaurants = Restaurant.all
   end

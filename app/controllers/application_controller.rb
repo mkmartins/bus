@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  include PublicActivity::StoreController
-  hide_action :current_user
-  
+
+include PublicActivity::StoreController
+
   protect_from_forgery
   before_filter :check_current_order 
 
@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   #   @current_user ||= User.find(session[:user_id]) if session[:user_id]
   # end
   # helper_method :current_user
+  
   def authorize
     redirect_to root_path, alert: "NOT AUTHORIZED" if current_user.nil?
   end
