@@ -9,11 +9,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id, :master, :salesman
   # attr_accessible :title, :body
 
   def default_cart
     self.cart ||= Cart.create
+  end
+
+   def is_admin?
+    self.master?
+  end
+
+   def is_salesman?
+    self.salesman?
   end
 
   def self.from_omniauth(auth)
@@ -28,3 +36,13 @@ class User < ActiveRecord::Base
   end
 
 end
+
+
+# How to set a salesman or master user?
+# USE RAILS COUNSEL
+# EXAMPLE:
+# u = User.last
+# u.master = true
+# u.save
+#
+#

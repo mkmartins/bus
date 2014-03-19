@@ -1,5 +1,7 @@
 class StaticController < ApplicationController
   before_filter :check_current_order
+  
+
 
   def home
   end

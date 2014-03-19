@@ -7,6 +7,7 @@ source 'https://rubygems.org'
   gem 'pg'
   gem 'bootstrap-sass', '~> 3.1.0'
   gem 'devise'
+  gem "rolify"
   gem 'cocoon'
   gem 'omniauth-facebook'
   gem 'font-awesome-rails'
@@ -14,6 +15,7 @@ source 'https://rubygems.org'
   gem 'deep_cloneable', '~> 1.6.0'
   gem 'amoeba'
   gem "omniauth-google-oauth2"
+
 
 group :development do
   gem 'better_errors'
