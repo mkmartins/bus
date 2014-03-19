@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   belongs_to :company
   has_one :cart
   has_many :orders
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id, :master, :salesman
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :uid, :provider, :company_id
   # attr_accessible :title, :body
 
   def default_cart
@@ -45,4 +46,17 @@ end
 # u.master = true
 # u.save
 #
-#
+#To define a global role:
+
+#with rolify
+# user = User.find(1)
+# user.add_role :admin
+# To define a role scoped to a resource instance
+
+# user = User.find(2)
+# user.add_role :moderator, Forum.first
+# To define a role scoped to a resource class
+
+# user = User.find(3)
+# user.add_role :moderator, Forum
+# That's it !

@@ -14,12 +14,23 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Menu", static_menu_path %></li>
-        <% if current_user.try(:is_admin?) &&  current_user.try(:is_saleman?)%>
-        <li><%= link_to "Add Restaurant", new_restaurant_path %></li>
-        <li><%= link_to "All Restaurants", restaurants_path %></li>
-        <li><%= link_to "Add Company", new_company_path %></li>
-        <% end %>
+          <li><%= link_to "Menu", static_menu_path %></li>
+        <% if current_user.try(:is_admin?)%>
+        <%# if current_user.has_any_role? :admin, :salesman %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+            <li><%= link_to "Add Restaurant", new_restaurant_path %></li>
+            <li><%= link_to "All Restaurants", restaurants_path %></li>
+            <li><%= link_to "Add Company", new_company_path %></li>
+            </ul>
+          </li>
+
+        <%# elsif current_user.try(:is_salesman?)%>
+            <li><%#= link_to "Add Restaurant", new_restaurant_path %></li>
+            <li><%#= link_to "All Restaurants", restaurants_path %></li>
+            <li><%#= link_to "Add Company", new_company_path %></li>
+         <% end %>
          <li><%#= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
         
       </ul>
@@ -33,7 +44,6 @@
         </li>
         
         <% else %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Sign In", new_user_session_path %></li>
         <% end %>
@@ -42,3 +52,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+      

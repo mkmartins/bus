@@ -15,7 +15,7 @@ source 'https://rubygems.org'
   gem 'deep_cloneable', '~> 1.6.0'
   gem 'amoeba'
   gem "omniauth-google-oauth2"
-
+  gem 'figaro'
 
 group :development do
   gem 'better_errors'
