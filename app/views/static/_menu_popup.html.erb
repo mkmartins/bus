@@ -15,7 +15,7 @@
                   
                     <% dish.ingredients.each do |ingredient| %>
                       <div>
-                          <span class=""><%= check_box_tag "order_dish[dish_ingredient][#{ingredient.id}]", '1', true  %></span>
+                          <span class=""><%= check_box_tag "order_dish[dish_ingredient][#{ingredient.id}]", '1', ingredient.standard?  %></span>
                           <div class="order-name"><%= ingredient.name %></div>
                       </div>
                       <%#= ingredient.price %>
@@ -24,6 +24,19 @@
               </div>
               <div class="col-sm-4">
                 <h3>Side Dishes</h3>
+                <% dish.side_dishes.each do |side_dish| %>
+                  <div><%= check_box_tag "order_dish[side_dish][standard]", '1', side_dish.standard?, class: 'side-dish-checkbox', data: {div: "side-dish-#{side_dish.id}-div"}  %> <%= side_dish.name %></div>
+                  <div id="side-dish-<%= side_dish.id%>-div" class='side-dish-ingredients-div' style="<%= 'display: none;' unless side_dish.standard? %>">
+                    <% side_dish.side_ingredients.each do |side_ingredient| %>
+                     
+                      <div >
+                          <span class=""> &nbsp; <%= check_box_tag "order_dish[side_dish_ingredient][#{side_ingredient.id}]", '1', side_ingredient.standard?  %></span>
+                          <div class="order-name"><%= side_ingredient.name %></div>
+                      </div>
+                      <%#= ingredient.price %>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
         
             </div>

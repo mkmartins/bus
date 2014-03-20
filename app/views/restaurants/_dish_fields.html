@@ -13,7 +13,7 @@
 
       <br/>
       <%= f.simple_fields_for :ingredients do |ingredient| %>
-         <%=  render 'ingredient_fields', f: ingredient %>
+         <%=  render 'ingredient_fields', f: ingredient, :locals => {:ingredient => ingredient} %>
       <% end %>
 
     <div class="link">
