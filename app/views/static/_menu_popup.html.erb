@@ -14,8 +14,11 @@
                 <h3>Main Dish Ingredients</h3>
                   
                     <% dish.ingredients.each do |ingredient| %>
-                      <div class="order-name"><%= ingredient.name %></div>
-                      <%= ingredient.price %>
+                      <div>
+                          <span class=""><%= check_box_tag "order_dish[dish_ingredient][#{ingredient.id}]", '1', true  %></span>
+                          <div class="order-name"><%= ingredient.name %></div>
+                      </div>
+                      <%#= ingredient.price %>
                     <% end %>
                   
               </div>
