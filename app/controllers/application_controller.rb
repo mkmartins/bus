@@ -31,7 +31,7 @@ include PublicActivity::StoreController
   def check_current_order
     # @order = session[:current_order_id].nil? ? Order.new : Order.find_by_current_order_id(session[:current_order_id])
     # raise " "
-    @order = session[:current_order_id].nil? ? Order.new : Order.new
+    # @order = session[:current_order_id].nil? ? Order.new : Order.new
   end
 
   def save_order_session
