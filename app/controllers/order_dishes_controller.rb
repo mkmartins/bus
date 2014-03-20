@@ -16,6 +16,9 @@ class OrderDishesController < ApplicationController
       # @order.dish_id = @dish.id
     end
     @order_dish = @order.order_dishes.create(dish_id: @dish.id)
+    params[:order_dish][:dish_ingredient].each do |key, value|
+      @order_dish.order_dish_ingredients.create(ingredient_id: key.to_i)
+    end
     redirect_to static_menu_path()
   end
 
