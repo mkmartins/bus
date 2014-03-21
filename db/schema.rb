@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140320014614) do
+ActiveRecord::Schema.define(:version => 20140321000228) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -86,10 +86,10 @@ ActiveRecord::Schema.define(:version => 20140320014614) do
 
   create_table "dishes", :force => true do |t|
     t.string   "plate"
-    t.decimal  "price"
+    t.decimal  "price",              :precision => 10, :scale => 0
     t.integer  "restaurant_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                                           :null => false
+    t.datetime "updated_at",                                                           :null => false
     t.string   "weekday_id"
     t.integer  "user_id"
     t.integer  "order_id"
@@ -97,25 +97,27 @@ ActiveRecord::Schema.define(:version => 20140320014614) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "is_side_dish",                                      :default => false, :null => false
+    t.integer  "parent_dish_id"
   end
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.boolean  "standard"
-    t.decimal  "price"
+    t.decimal  "price",        :precision => 10, :scale => 0
     t.integer  "dish_id"
     t.integer  "side_dish_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   create_table "order_dish_ingredients", :force => true do |t|
     t.string   "name"
     t.string   "value"
     t.integer  "order_dish_id"
+    t.integer  "ingredient_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "ingredient_id"
   end
 
   create_table "order_dishes", :force => true do |t|
@@ -127,10 +129,10 @@ ActiveRecord::Schema.define(:version => 20140320014614) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "restaurant_id", :null => false
     t.string   "status"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "restaurant_id", :null => false
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
@@ -161,9 +163,9 @@ ActiveRecord::Schema.define(:version => 20140320014614) do
     t.string   "name"
     t.integer  "dish_id"
     t.boolean  "standard"
-    t.decimal  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "price",      :precision => 10, :scale => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "user_emails", :force => true do |t|
