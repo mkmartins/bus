@@ -1,4 +1,8 @@
 class Restaurant < ActiveRecord::Base
+
+  include PublicActivity::Model
+  tracked
+
   belongs_to :cuisine
   has_many :dishes
   has_many :ingredients, through: :dishes
@@ -7,7 +11,11 @@ class Restaurant < ActiveRecord::Base
   accepts_nested_attributes_for :cuisine, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :dishes, reject_if: :all_blank, allow_destroy: true
 
-  attr_accessible :cuisine_id, :name, :cuisine,  :cuisine_attributes, :dishes_attributes
+  attr_accessible :cuisine_id, :name, :cuisine,  :cuisine_attributes, :dishes_attributes, :image
+
+ 
+  has_attached_file :image, :styles => { :medium => "1500x200>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   amoeba do
     enable

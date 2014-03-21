@@ -32,6 +32,7 @@ module Bus
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.i18n.enforce_available_locales = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -60,5 +61,19 @@ module Bus
     config.assets.version = '1.0'
     #heroku stuff
     config.assets.initialize_on_precompile = false
+
+     config.paperclip_defaults = {
+        storage: :s3,
+        s3_credentials: {
+            bucket: ENV["AWS_BUCKET_DEV"],
+            access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+            secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+        }
+    }
+    #     ,
+
+    #     default_url: "/assets/:attachment/:style.png",
+    #     path: "/assets/:attachment/:id/:style.:extension"
+    # }
   end
 end

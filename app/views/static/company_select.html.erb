@@ -1,0 +1,15 @@
+
+
+
+<%= simple_form_for @user do |f| %>
+
+
+<h4><%= f.input :company_id, label: "SELECT THE COMPANY YOU WORK FOR", collection: Company.all.sort.collect %></h4>
+
+<div class="form-actions">
+  <%= f.button :submit, "Sign up" %>
+</div>
+
+<% end %>
+
+

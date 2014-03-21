@@ -1,0 +1,20 @@
+
+<%= simple_form_for(@company) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :message %>
+    <%= f.input :adress_line_1 %>
+    <%= f.input :adress_line_2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%=  %>
+    <%=  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

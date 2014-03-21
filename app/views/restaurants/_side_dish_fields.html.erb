@@ -1,15 +1,16 @@
 <div class="nested-fields well well-lg">
   <div class="row">
-    <div class="col-xs-3"><%=f.input :name, label: "Side Dish Name" %></div>
-    <div class="col-xs-3"><%=f.input :standard, label: "Standard Side Dish?" %></div>
+    <%= f.hidden_field :is_side_dish, value: 1 %>
+    <div class="col-xs-3"><%=f.input :plate, label: "Side Dish Name" %></div>
+    <!--<div class="col-xs-3"><%#=f.input :standard, label: "Standard Side Dish?" %></div>-->
     <div class="col-xs-4"><%=link_to_remove_association "Remove Side Dish", f, class: "btn btn-danger btn-xs" %></div>
   </div>
   <br/>
-    <%= f.simple_fields_for :side_ingredients do |side_ingredient| %>
+    <%= f.simple_fields_for :ingredients do |side_ingredient| %>
     <br/>
       <%=  render 'side_ingredient_fields', f: side_ingredient %>
     <% end %>
   <div class="link">
-    <%= link_to_add_association 'Add Side Ingredient', f, :side_ingredients, class: "btn btn-success" %>
+    <%= link_to_add_association 'Add Side Ingredient', f, :ingredients, class: "btn btn-success" %>
   </div>
 </div>

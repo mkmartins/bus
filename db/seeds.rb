@@ -11,16 +11,19 @@
 end
 
 Restaurant.all.each do |p|
-    6.times do
+  6.times do
     dish = p.dishes.create(plate: Faker::Name.last_name)
     10.times do
-    dish.ingredients.create(name: Faker::Name.last_name)
-    1.times do
-    side_dish = dish.side_dishes.create(name:Faker::Name.first_name)
-    5.times do
-    side_dish.side_ingredients.create(name:Faker::Name.last_name)
-  end
-  end
-  end
+      dish.ingredients.create(name: Faker::Name.last_name)
+      1.times do
+        side_dish = dish.side_dishes.create(plate: Faker::Name.first_name, is_side_dish: true)
+        5.times do
+          side_dish.ingredients.create(name:Faker::Name.last_name)
+        end
+      end
+    end
   end
 end
+
+user = User.create(:email => 'admin@bus.bus', :password => 'changeme', :password_confirmation => 'changeme')
+user.has_role(:admin)

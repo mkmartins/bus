@@ -16,3 +16,18 @@
 //= require_tree .
 //= require cocoon
 
+$(function(){
+// console.debug($('.side-dish-checkbox'));
+  $('.side-dish-checkbox').on('change',function(){
+    var check_box = $(this);
+    var id_div = check_box.data('div');
+    console.debug($('#'+id_div));
+
+    if (check_box.is(':checked')) {
+        $('#'+id_div).show();
+    } else {
+        $('#'+id_div).hide();
+    }
+  });
+
+});
