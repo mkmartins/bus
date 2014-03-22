@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
     @dish = @restaurant.dishes.build
     @dish.ingredients.build
     @side_dish = @dish.side_dishes.build
-    @side_dish.side_ingredients.build
+    #@side_dish.side_ingredients.build
   end
 
   def create
@@ -52,5 +52,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   end
+
 
 end

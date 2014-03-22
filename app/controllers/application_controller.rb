@@ -42,4 +42,10 @@ include PublicActivity::StoreController
     session[:current_order_id] = nil
     check_current_order
   end
+
+#    def after_sign_in_path_for(resource_or_scope)
+#    #if request.env['omniauth.origin']
+#       redirect_to root_path
+#     #end
+# end
 end
