@@ -11,13 +11,14 @@ source 'https://rubygems.org'
   gem 'cocoon'
   gem 'omniauth-facebook'
   gem 'font-awesome-rails'
-  gem 'jquery-rails'
+  gem "jquery-rails", "< 3.0.0"
   gem 'deep_cloneable', '~> 1.6.0'
   gem 'amoeba'
   gem "omniauth-google-oauth2"
   gem 'figaro'
   gem "aws-sdk"
   gem 'public_activity'
+  gem 'activeadmin'
   
 group :development do
   gem 'better_errors'
@@ -30,7 +31,6 @@ group :development do
   gem 'guard-pow', require: false
   gem 'letter_opener'
   gem 'cancan'
-  gem 'rolify'
   gem 'rails_layout'
   gem 'powder'
   gem 'ffaker'

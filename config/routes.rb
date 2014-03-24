@@ -1,5 +1,9 @@
 Bus::Application.routes.draw do
 
+  root to: "static#home"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   resources :companies
 
@@ -24,6 +28,7 @@ Bus::Application.routes.draw do
 
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"} 
+  # ActiveAdmin.routes(self)
 
   resources :users
 
@@ -58,9 +63,6 @@ Bus::Application.routes.draw do
   end
 
   resources :orders
-
-
-  root to: "static#home"
 
 
   # The priority is based upon order of creation:
