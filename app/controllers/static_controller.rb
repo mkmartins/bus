@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   before_filter :check_current_order
+  
 
   def home
   end
@@ -20,6 +21,12 @@ class StaticController < ApplicationController
     @dish = @dishes.find(params[:dishes_id])
     @order_dish = @dish.dup
     
+  end
+
+  def company_select
+     @user = User.new
+     @companies = Company.all.sort.collect { |company| [company.name, company.id] }
+
   end
 
 end

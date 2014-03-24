@@ -7,13 +7,18 @@ source 'https://rubygems.org'
   gem 'pg'
   gem 'bootstrap-sass', '~> 3.1.0'
   gem 'devise'
+  gem "rolify"
   gem 'cocoon'
   gem 'omniauth-facebook'
   gem 'font-awesome-rails'
   gem 'jquery-rails'
   gem 'deep_cloneable', '~> 1.6.0'
   gem 'amoeba'
-
+  gem "omniauth-google-oauth2"
+  gem 'figaro'
+  gem "aws-sdk"
+  gem 'public_activity'
+  
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

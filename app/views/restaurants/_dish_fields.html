@@ -6,9 +6,14 @@
         <div class="row">
           <div class="col-xs-2"><%= f.input :price %></div>
         </div>
+
+      <div class='row'>
+       <div class="col-xs-4"> <%= f.input :image %> </div>
+      </div>  
+
       <br/>
       <%= f.simple_fields_for :ingredients do |ingredient| %>
-         <%=  render 'ingredient_fields', f: ingredient %>
+         <%=  render 'ingredient_fields', f: ingredient, :locals => {:ingredient => ingredient} %>
       <% end %>
 
     <div class="link">

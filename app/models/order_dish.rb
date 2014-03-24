@@ -9,4 +9,8 @@ class OrderDish < ActiveRecord::Base
   #   @dishes = Dish.all
   #   @dish = @dishes.find(params[:dishes_id]).dup
   # end
+
+
+  
+
 end
