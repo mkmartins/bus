@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
 
-
-
   def index
     @users = User.all
   end
+
  def new
     @user = User.new
     @companies = Company.all.sort.collect { |company| [company.name, company.id] }
@@ -49,17 +48,16 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'You are good. We hope you enjoy your meal.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
+     end
+
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -69,5 +67,5 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
+
 end

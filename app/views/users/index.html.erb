@@ -1,5 +1,24 @@
-<ul>
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>email</th>
+    <th>Company</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
   <% @users.each do |user| %>
-    <li><%= user.email %></li>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.company.name %></td>
+    <td><%#= link_to 'Show', user %></td>
+    <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
   <% end %>
-</ul>
+</table>
+
+
+<%= link_to 'New User', new_user_path %>

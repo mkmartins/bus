@@ -23,13 +23,16 @@ Bus::Application.routes.draw do
   resources :ingredients
 
 
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"} 
 
-  resources :users, only: [:index, :new]
+  resources :users
 
-  get "/select-company", to: "static#company_select", as: :company_select
+  get "select-company", to: "users#edit", as: :company_select
 
+  get "/select-company", to: "users#add_company", as: :company_select
+  post "/select-company", to: "users#add_company", as: :company_select
 
+  get "/select-company", to: "add_companies#edit_company_select"
 
 
   get "navbar_bottom/about_us"

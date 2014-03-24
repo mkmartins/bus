@@ -1,0 +1,8 @@
+
+<%= simple_form_for (@user) do |f| %>
+      <h1> You're almost done! Just select the company you work for!</h1>
+      <%= f.input :company_id, label: "Comany name", collection: Company.all.sort.collect %>
+      <%= f.button :submit %>
+<% end %>
+
+
