@@ -16,6 +16,3 @@
 
 
 end
-
-# the idea is:   
-# if current_user has @user.company_id(@user) == nil redirect to edit_user_path else redirect to root_path(=home) 

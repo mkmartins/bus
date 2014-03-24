@@ -16,13 +16,13 @@ class User < ActiveRecord::Base
     self.cart ||= Cart.create
   end
 
-   def is_admin?
-    self.master?
-  end
+  #  def is_admin?
+  #   self.master?
+  # end
 
-   def is_salesman?
-    self.salesman?
-  end
+  #  def is_salesman?
+  #   self.salesman?
+  # end
 
 
   def self.find_for_facebook_oauth(auth)
@@ -46,13 +46,6 @@ end
 
 # How to set a salesman or master user?
 # USE RAILS COUNSEL
-# EXAMPLE:
-# u = User.last
-# u.master = true
-# u.save
-#
-#To define a global role:
-
 #with rolify
 # user = User.find(1)
 # user.add_role :admin

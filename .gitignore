@@ -7,6 +7,7 @@
 .powenv
 .ruby-gemset
 database.yml
+application.yml
 
 # Ignore bundler config
 /.bundle
@@ -23,3 +24,4 @@ database.yml
 .DS-Store
 # Ignore application configuration
 /config/application.yml
+
