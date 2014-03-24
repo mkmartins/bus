@@ -45,7 +45,7 @@ end
 
 
 # How to set a salesman or master user?
-# USE RAILS COUNSEL
+# USE RAILS CONSOLE
 #with rolify
 # user = User.find(1)
 # user.add_role :admin

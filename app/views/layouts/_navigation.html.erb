@@ -27,6 +27,9 @@
             <li><%= link_to "Add Company", new_company_path %></li>
             </ul>
           </li>
+            <% if current_user.has_any_role? :admin %>
+              <li><%= link_to "Admin Console", admin_root_path %></li>
+            <% end %>
          <% end %>
         <% end %>
       </ul>
