@@ -27,3 +27,6 @@ end
 
 user = User.create(:email => 'admin@bus.bus', :password => 'changeme', :password_confirmation => 'changeme')
 user.has_role(:admin)
+
+user = User.create(:email => 'sales@bus.bus', :password => 'changeme', :password_confirmation => 'changeme')
+user.has_role(:salesman)
