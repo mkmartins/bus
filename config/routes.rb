@@ -14,7 +14,7 @@ Bus::Application.routes.draw do
   resources :user_emails
 
   get '/contact_us', to: "contact_us#new", as: :contact_us
-  get '/about_us', to: "about_us#new", as: :about_us
+  # get '/about_us', to: "about_us#new", as: :about_us
   post '/contact_us', to: "contact_us#create", as: :contact_us
 
 
@@ -40,14 +40,14 @@ Bus::Application.routes.draw do
   get "/select-company", to: "add_companies#edit_company_select"
 
 
-  get "navbar_bottom/about_us"
-  get "navbar_bottom/contact_us"
-  get "navbar_bottom/faq"
-  get "navbar_bottom/investors"
-  get "navbar_bottom/participating_businesses"
-  get "navbar_bottom/how_it_works"
-  get "navbar_bottom/process"
-  get "navbar_bottom/team"
+  get "/about_us", to: "navbar_bottom#about_us", as: :nav_about_us
+  # get "navbar_bottom/contact_us"
+  get "/faq", to: "navbar_bottom#faq", as: :faq
+  get "/investors", to: "navbar_bottom#investors", as: :investors
+  get "/participating_businesses", to: "navbar_bottom#participating_businesses", as: :participating_businesses
+  get "/how_it_works", to: "navbar_bottom#how_it_works", as: :how_it_works
+  get "/process", to: "navbar_bottom#process", as: :process
+  get "/team", to: "navbar_bottom#team", as: :team
 
   get "static/menu"
   

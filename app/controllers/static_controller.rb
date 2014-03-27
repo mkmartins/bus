@@ -8,8 +8,8 @@ class StaticController < ApplicationController
   def about_us
   end
 
-  def how_it_works
-  end
+  # def how_it_works
+  # end
 
   def contact_us
   end
