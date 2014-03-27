@@ -20,9 +20,14 @@ $navbar-default-link-color: white;
 @import "static";
 @import "font-awesome";
 
+// .carousel {
+//   position:relative;
+// }
 
 .navbar-default {
   background-color: #D92323;
+  margin-bottom: 0px;
+  padding: 20px;
 }
 .navbar-bottom {
   background-color: $navbar-bottom-bg;

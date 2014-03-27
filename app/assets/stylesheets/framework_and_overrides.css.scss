@@ -6,11 +6,37 @@ $well-bg: #6c6c6c;
 // make all images responsive by default
 
 main {
-  @extend .container;
+  // @extend .container;
   background-color: #fff;
-  padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
+
+.home-page2 {
+  padding-top: 80px;
+  padding-left: 100px;
+  padding-bottom: 80px;
+  background-image: url(http://www.publicdomainpictures.net/pictures/20000/nahled/blue-background.jpg)
+}
+
+.home-page21 {
+
+}
+
+.home-page3 {
+
+  text-align: center;
+  padding-bottom: 300px;
+  background-image: url(http://www.publicdomainpictures.net/pictures/10000/velka/1-1229115491GHkw.jpg)
+}
+
+.home-page {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  background-image: url(http://www.publicdomainpictures.net/pictures/10000/velka/1-1229115491GHkw.jpg);
+}
+
+.home-top {
+  height: 100%;
+}
 
 @import "bootstrap";
